@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics – Chapter 1: Introduction</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f3f5f9;
+    color: #222;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  /* ---------- Chapter tabs ---------- */
+  .tabs {
+    position: sticky; top: 0; z-index: 10;
+    background: #1f3c88;
+    display: flex; overflow-x: auto; white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+  .tabs a {
+    color: #dfe6ff; text-decoration: none;
+    padding: 14px 16px; font-weight: 600; font-size: 15px;
+    flex-shrink: 0; border-bottom: 3px solid transparent;
+  }
+  .tabs a.active { color: #fff; border-bottom-color: #ffcc33; background: rgba(255,255,255,.08); }
+  /* ---------- Layout ---------- */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 16px 14px 60px; }
+  header h1 { font-size: 1.45rem; margin: 6px 0 2px; color: #1f3c88; }
+  header p { margin: 0 0 12px; color: #555; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+  .jump a {
+    background: #fff; border: 1px solid #c9d3ea; color: #1f3c88;
+    padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 14px;
+  }
+  section { margin-top: 26px; }
+  section > h2 {
+    font-size: 1.15rem; background: #1f3c88; color: #fff;
+    padding: 10px 14px; border-radius: 8px; margin: 0 0 12px;
+  }
+  .q {
+    background: #fff; border-radius: 10px; padding: 14px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  .q.cv { background: #fffcf3; }   /* slight tint for converted questions */
+  .qtext { font-weight: 600; margin: 0 0 8px; }
+  .qnum { color: #1f3c88; margin-right: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 12px; font-weight: 600; }
+  .tag.mq { background: #e3ecff; color: #1f3c88; }
+  .tag.qb { background: #e2f5e9; color: #1b6b3a; }
+  .tag.tn { background: #fff0dc; color: #9a5300; }
+  .opts { list-style: none; padding: 0; margin: 0 0 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .opts li { background: #f4f6fb; padding: 6px 10px; border-radius: 6px; font-size: 15px; }
+  .opts li.right { background: #d9f2e1; font-weight: 700; color: #1b6b3a; }
+  .ans {
+    border-left: 4px solid #2e9e5b; background: #f6fbf8;
+    padding: 10px 12px; border-radius: 0 8px 8px 0;
+  }
+  .ans .lbl { font-size: 12px; font-weight: 700; color: #2e9e5b; text-transform: uppercase; letter-spacing: .5px; display: block; margin-bottom: 4px; }
+  .ans p { margin: 6px 0; }
+  .ans ul, .ans ol { margin: 6px 0; padding-left: 22px; }
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; background: #fff; }
+  th, td { border: 1px solid #c9d3ea; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eef2fb; }
+  td.c, th.c { text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 10px 0; }
+  @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
+  .box { border: 1px solid #c9d3ea; border-radius: 8px; padding: 10px; background: #fff; }
+  .box h4 { margin: 0 0 6px; font-size: 15px; text-align: center; }
+  svg { width: 100%; height: auto; display: block; }
+  .flow { display: flex; flex-direction: column; align-items: center; gap: 4px; margin: 12px 0; }
+  .flow div.step {
+    background: #e3ecff; color: #1f3c88; font-weight: 600; font-size: 15px;
+    padding: 8px 14px; border-radius: 8px; text-align: center; width: 100%; max-width: 360px;
+  }
+  .flow div.arrow { font-size: 20px; color: #1f3c88; line-height: 1; }
+  .indent { padding-left: 18px; }
+  footer { text-align: center; color: #777; font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<!-- ===== Chapter Tabs ===== -->
+<nav class="tabs">
+  <a href="index.html" class="active">Chapter 1</a>
+  <a href="2.html">Chapter 2</a>
+  <a href="3.html">Chapter 3</a>
+  <a href="4.html">Chapter 4</a>
+  <a href="5.html">Chapter 5</a>
+  <a href="6.html">Chapter 1 (macro)</a>
+</nav>
+
+<div class="wrap">
+  <header>
+    <h1>Micro Chapter 1: Introduction</h1>
+    <p>Introductory Microeconomics</p>
+    <div class="legend">
+      <span class="tag mq">Model Question</span>
+      <span class="tag qb">Question Bank</span>
+      <span class="tag tn">Teacher's Notes</span>
+    </div>
+  </header>
+
+  <div class="jump">
+    <a href="#mcq">Choose the answer</a>
+    <a href="#fib">Fill in the blanks</a>
+    <a href="#one">One word / sentence</a>
+    <a href="#two">2 Marks</a>
+    <a href="#four">4 Marks</a>
+  </div>
+
+  <!-- ================= SECTION A: MCQ ================= -->
+  <section id="mcq">
+    <h2>A. Choose the correct answer (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>The scarce resources of an economy have</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.1</span></div>
+      <ul class="opts">
+        <li class="right">a) Competing usages</li>
+        <li>b) Single usage</li>
+        <li>c) Unlimited usages</li>
+        <li>d) Limited usages</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) Competing usages</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Central problems of an economy include</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.2</span></div>
+      <ul class="opts">
+        <li>a) What to produce</li>
+        <li>b) How to produce</li>
+        <li>c) For whom to produce</li>
+        <li class="right">d) All of the above</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>d) All of the above</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>Which of the following is an example of microeconomics?</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q1</span><span class="tag qb">Question Bank · I.3</span></div>
+      <ul class="opts">
+        <li>a) National income</li>
+        <li class="right">b) Consumer behaviour</li>
+        <li>c) Unemployment</li>
+        <li>d) Foreign trade</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>b) Consumer behaviour</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Traditionally, the subject matter of economics has been studied under which branches?</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q1</span><span class="tag qb">Question Bank · I.4</span></div>
+      <ul class="opts">
+        <li class="right">a) Micro and Macro Economics</li>
+        <li>b) Positive and Normative economics</li>
+        <li>c) Deductive and Inductive method</li>
+        <li>d) Market and Mixed Economy</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) Micro and Macro Economics</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B: FILL IN THE BLANKS ================= -->
+  <section id="fib">
+    <h2>B. Fill in the blanks (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Scarcity of resources gives rise to ________.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The problem of choice</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>In a centrally planned economy, all important decisions are made by ________.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q6</span><span class="tag qb">Question Bank · II.2</span><span class="tag qb">Question Bank · III.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Government</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>________ is a set of arrangements where economic agents can freely exchange their endowments or products with each other.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Market</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>In reality, all economies are ________ economies.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q6</span><span class="tag qb">Question Bank · II.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Mixed</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>________ cost of some activity is the gain foregone from the second best activity.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q7</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Opportunity</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION C: ONE WORD / SENTENCE ================= -->
+  <section id="one">
+    <h2>C. Answer in a word / sentence (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Why does the problem of choice arise?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The problem of choice arises because of the scarcity of resources.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Give an example for Market economy.</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The United States of America, where the role of the government is minimal.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>What do you mean by Production Possibility Set?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The collection of all possible combinations of the goods and services that can be produced from a given amount of resources and a given stock of technological knowledge is called the production possibility set of the economy.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>What does a combination below the Production Possibility Frontier indicate?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>It indicates that all or some of the resources are either underemployed or are utilised in a wasteful fashion.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Give the meaning of Microeconomics.</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>In microeconomics, we study the behaviour of individual economic agents in the markets for different goods and services and try to figure out how prices and quantities of goods and services are determined through the interaction of individuals in these markets.</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">6.</span>Positive economics studies which aspect of economic mechanisms?</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-11a</span><span class="tag qb">Question Bank · III.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Functioning of mechanism</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">7.</span>Normative economics deals with which aspect of economic mechanisms?</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Evaluation of mechanism</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">8.</span>The service of teachers is based on which resource?</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Skill</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">9.</span>A market economy is associated with which type of ownership?</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Private ownership</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION D: 2 MARKS ================= -->
+  <section id="two">
+    <h2>D. Answer in about 4 sentences (2 marks each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Mention the Central problems of an economy.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q17</span><span class="tag qb">Question Bank · V.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Every society faces scarcity of resources, and its scarce resources have competing usages. So every society has to decide how to use its scarce resources. The central problems are:</p>
+        <ol>
+          <li><b>What is produced and in what quantities?</b> – how much of each of the many possible goods and services to produce.</li>
+          <li><b>How are these goods produced?</b> – how much of which resources to use and which technology to adopt (more labour or more machines).</li>
+          <li><b>For whom are these goods produced?</b> – how the produce of the economy is distributed among the individuals in the economy.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>List out the basic economic activities.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q17</span><span class="tag qb">Question Bank · V.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Production, exchange and consumption of goods and services are among the basic economic activities of life.</p>
+        <ol>
+          <li><b>Production</b> – e.g. a family farm produces corn by using its resources.</li>
+          <li><b>Exchange</b> – the farm procures clothing, housing and various services in exchange for the rest of the produce.</li>
+          <li><b>Consumption</b> – the farm uses part of the produce for consumption purposes.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>What is Production Possibility Frontier?</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q17</span><span class="tag qb">Question Bank · V.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The production possibility frontier is a curve that gives the maximum amount of one good (corn) that can be produced in the economy for any given amount of the other good (cotton), and vice-versa.</p>
+        <p>It gives the combinations of corn and cotton that can be produced when the resources of the economy are fully utilised.</p>
+        <p>Any point on or below the curve represents a combination that can be produced with the economy's resources. A point strictly below the frontier means that all or some of the resources are underemployed or are utilised in a wasteful fashion.</p>
+
+        <div class="box" style="margin-top:10px;">
+          <h4>Production Possibility Frontier</h4>
+          <svg viewBox="0 0 400 290" role="img" aria-label="Production possibility frontier for corn and cotton">
+            <!-- shaded attainable area -->
+            <path d="M50,240 L50,40 Q86,46 120,60 Q157,76.5 190,100 Q228,127 260,160 Q298,197 330,240 Z" fill="#dbe7ff" opacity="0.7"/>
+            <!-- axes -->
+            <line x1="50" y1="20" x2="50" y2="240" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="240" x2="380" y2="240" stroke="#333" stroke-width="2"/>
+            <!-- ticks x -->
+            <g font-size="12" fill="#444" text-anchor="middle">
+              <text x="120" y="256">1</text><text x="190" y="256">2</text>
+              <text x="260" y="256">3</text><text x="330" y="256">4</text>
+            </g>
+            <!-- ticks y -->
+            <g font-size="12" fill="#444" text-anchor="end">
+              <text x="44" y="204">2</text><text x="44" y="164">4</text>
+              <text x="44" y="124">6</text><text x="44" y="84">8</text>
+              <text x="44" y="44">10</text>
+            </g>
+            <text x="40" y="256" font-size="13" text-anchor="end" fill="#333">O</text>
+            <text x="378" y="275" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Corn</text>
+            <text x="50" y="14" font-size="14" text-anchor="middle" fill="#1f3c88" font-weight="bold">Cotton</text>
+            <!-- curve -->
+            <path d="M50,40 Q86,46 120,60 Q157,76.5 190,100 Q228,127 260,160 Q298,197 330,240" fill="none" stroke="#1f6fd1" stroke-width="3"/>
+            <!-- points -->
+            <g fill="#1f3c88">
+              <circle cx="50" cy="40" r="4"/><circle cx="120" cy="60" r="4"/>
+              <circle cx="190" cy="100" r="4"/><circle cx="260" cy="160" r="4"/>
+              <circle cx="330" cy="240" r="4"/>
+            </g>
+            <g font-size="13" fill="#222" font-weight="bold">
+              <text x="57" y="34">A (0,10)</text>
+              <text x="125" y="52">B (1,9)</text>
+              <text x="196" y="92">C (2,7)</text>
+              <text x="266" y="152">D (3,4)</text>
+              <text x="336" y="232">E (4,0)</text>
+            </g>
+            <!-- point below frontier -->
+            <circle cx="150" cy="170" r="4" fill="#c0392b"/>
+            <text x="157" y="174" font-size="12" fill="#c0392b">U – resources underemployed</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>What do you mean by Mixed economy? Give an example.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q17</span><span class="tag qb">Question Bank · V.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>A mixed economy is one where some important decisions are taken by the government and the economic activities are by and large conducted through the market. In reality, all economies are mixed economies. The only difference is in terms of the extent of the role of the government in deciding the course of economic activities.</p>
+        <p><b>Example:</b> India – since Independence, the government has played a major role in planning economic activities, though its role has been reduced considerably in the last couple of decades.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Distinguish between Positive and Normative economics.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q17</span><span class="tag qb">Question Bank · V.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Positive Economic Analysis</th><th>Normative Economic Analysis</th></tr>
+            <tr><td>We study how the different mechanisms function.</td><td>We try to understand whether these mechanisms are desirable or not.</td></tr>
+            <tr><td>We try to figure out how a particular mechanism functions.</td><td>We try to evaluate the mechanism.</td></tr>
+            <tr><td>We figure out the outcomes which are likely to result under each mechanism.</td><td>We study how desirable the outcomes resulting from them are.</td></tr>
+          </table>
+        </div>
+        <p>However, this distinction is not a very sharp one. The positive and normative issues are very closely related to each other, and a proper understanding of one is not possible in isolation from the other.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>State the difference between Micro and Macro economics.</p>
+      <div class="tags"><span class="tag qb">Question Bank · V.6</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Microeconomics</th><th>Macroeconomics</th></tr>
+            <tr><td>Studies the behaviour of individual economic agents in the markets for different goods and services.</td><td>Tries to understand the economy as a whole.</td></tr>
+            <tr><td>Tries to figure out how prices and quantities of goods and services are determined through the interaction of individuals in these markets.</td><td>Focuses on aggregate measures such as total output, employment and aggregate price level.</td></tr>
+            <tr><td>Studies the different markets.</td><td>Studies the behaviour of aggregate or macro measures of the performance of the economy, e.g. why prices rise and why resources are unemployed.</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>Write the meaning of Opportunity cost with an example.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q21</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>If more of the scarce resources are used in the production of one good, fewer resources are available for the production of the other good. So there is always a cost of having a little more of one good in terms of the amount of the other good that has to be forgone. This is known as the <b>opportunity cost</b> of an additional unit of the good. It is also called the economic cost.</p>
+        <p><b>Example:</b> In an economy producing corn and cotton, moving from possibility A (0 corn, 10 cotton) to B (1 corn, 9 cotton) means 1 unit of cotton is given up to get 1 unit of corn. So the opportunity cost of that 1 unit of corn is 1 unit of cotton.</p>
+        <p>Similarly, if a family wants to have a bigger house, it may have to give up the idea of having a few more acres of arable land.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION E: 4 MARKS ================= -->
+  <section id="four">
+    <h2>E. Answer in about 12 sentences (4 marks each)</h2>
+
+    <!-- Q1: Family farm (Teacher's notes - verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Briefly explain how the Family Farm, Weaver and Teacher can use their resources to fulfil their needs in a simple economy.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q27</span><span class="tag qb">Question Bank · VI.1</span><span class="tag tn">Teacher's Notes · Q2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Think of any society. People in the society need many goods and services in their everyday life including food, clothing, shelter, transport facilities like roads and railways, postal services and various other services like that of teachers and doctors.</p>
+        <p>In fact, the list of goods and services that any individual needs is so large that no individual in society, to begin with, has all the things she needs.</p>
+        <p>•A family farm may own a plot of land, some grains, farming implements, maybe a pair of bullocks and also the labour services of the family members.</p>
+        <p>•A weaver may have some yarn, some cotton and other instruments required for weaving cloth.</p>
+        <p>•The teacher in the local school has the skills required to impart education to the students.</p>
+        <p>•Some others in society may not have any resource excepting their own labour services. Each of these decision-making units can produce some goods or services by using the resources that it has and use part of the produce to obtain the many other goods and services which it needs from the others in society.</p>
+      </div>
+    </div>
+
+    <!-- Q2: Central problems (Teacher's notes - verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>What are the three Central problems of an economy? Explain.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q27</span><span class="tag qb">Question Bank · VI.2</span><span class="tag tn">Teacher's Notes · Q3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In an economy resources are limited and human wants are unlimited. So, the problem of choice arises. The scarce resources of an economy have competing usages. The problem of choice is called as economic problem.</p>
+        <p>Every economy, whether simple /complex, capitalist / controlled / mixed, developed / underdeveloped will have to solve the following three fundamental economic problems:</p>
+        <p><b>A. What to produce?</b></p>
+        <p>As resources are scarce an economy cannot produce everything. What goods are to be produced (Problem of guns or butter) and how much is to be produced depends on</p>
+        <p class="indent">the countries planners in socialism,<br>on market forces of demand and supply in a market economy.<br>and on both planners and market forces in a mixed economy.</p>
+        <p><b>B. How to produce?</b></p>
+        <p>This problem is relating to choice of technology there are two techniques of production.</p>
+        <p class="indent">A. Labour intensive techniques (Use more labour to produce goods)<br>B. Capital intensive techniques (Use more machines to produce goods)</p>
+        <p><b>C. For whom to produce?</b></p>
+        <p>Human wants and resources available vary from region to region. The people may be poor or rich. So, the important question is "for whom are these goods to be produced"? This question leads to the problem of distribution.</p>
+      </div>
+    </div>
+
+    <!-- Q3: PPF (Teacher's notes - verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>Explain the Production Possibility Frontier.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q27</span><span class="tag qb">Question Bank · VI.3</span><span class="tag tn">Teacher's Notes · Q1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>It tells us how we can produce two goods with the given resources on the assumptions</p>
+        <ol>
+          <li>Resources are fully and efficiently utilized</li>
+          <li>Technique of production remains constant</li>
+        </ol>
+        <p>Production Possibility Frontier refers to the graphical representation of all the possible combination of two products that can be produced with the given resources and technology. PPF can be understood with the help of following table and diagram-</p>
+
+        <div class="two-col">
+          <div class="table-wrap" style="margin:0;">
+            <table>
+              <tr><th class="c">Possibilities</th><th class="c">Corn</th><th class="c">Wheat</th></tr>
+              <tr><td class="c">A</td><td class="c">0</td><td class="c">10</td></tr>
+              <tr><td class="c">B</td><td class="c">1</td><td class="c">9</td></tr>
+              <tr><td class="c">C</td><td class="c">2</td><td class="c">7</td></tr>
+              <tr><td class="c">D</td><td class="c">3</td><td class="c">4</td></tr>
+              <tr><td class="c">E</td><td class="c">4</td><td class="c">0</td></tr>
+            </table>
+          </div>
+          <div class="box">
+            <p style="margin-top:0;">The above table shows, if all resources are used to produce Corn, the maximum amount of Corn produced is 4 units (Point E) and maximum wheat can be produced is 10 units (Point A).</p>
+            <p style="margin-bottom:0;">Apart from this combination B, C, D shows many other possibilities of production.</p>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="box">
+            <h4>Diagram</h4>
+            <svg viewBox="0 0 360 280" role="img" aria-label="Production possibility curve for corn and wheat">
+              <line x1="50" y1="20" x2="50" y2="240" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="240" x2="345" y2="240" stroke="#333" stroke-width="2"/>
+              <text x="50" y="14" font-size="14" text-anchor="middle" fill="#333">Y</text>
+              <text x="352" y="245" font-size="14" fill="#333">X</text>
+              <text x="40" y="256" font-size="14" text-anchor="end" fill="#333">O</text>
+              <text x="190" y="268" font-size="14" text-anchor="middle" fill="#1f3c88" font-weight="bold">Corn</text>
+              <text x="22" y="140" font-size="14" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 22 140)">Wheat</text>
+              <path d="M50,40 Q86,46 120,60 Q157,76.5 190,100 Q228,127 260,160 Q298,197 330,240" fill="none" stroke="#1f6fd1" stroke-width="3"/>
+              <g fill="#1f3c88">
+                <circle cx="50" cy="40" r="4"/><circle cx="120" cy="60" r="4"/>
+                <circle cx="190" cy="100" r="4"/><circle cx="260" cy="160" r="4"/>
+                <circle cx="330" cy="240" r="4"/>
+              </g>
+              <g font-size="14" fill="#222" font-weight="bold">
+                <text x="57" y="34">A</text>
+                <text x="125" y="52">B</text>
+                <text x="196" y="92">C</text>
+                <text x="267" y="154">D</text>
+                <text x="334" y="230">E</text>
+              </g>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>Explanation</h4>
+            <p>PPC or PPF curve is a <b>concave</b> curve</p>
+            <p>The <b>Production Possibility Frontier</b> gives the combinations of corn and cotton represented by points A, B, C, D and E that can be produced with given resource and technology.</p>
+            <p>The combination below the Production Possibility Frontier/Curve indicates <b>Under-utilization of resources.</b></p>
+            <p style="margin-bottom:0;"><b>PPF shows Opportunity cost which is the cost of next best alternative sacrificed in order to produce another good.</b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q4: Centrally planned (Teacher's notes - verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Write about Centrally planned economy.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q27</span><span class="tag qb">Question Bank · VI.4</span><span class="tag tn">Teacher's Notes · Q4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>An economy in which economic activities are controlled by the government rather than private people is called centrally planned economy. Example: North Korea, Cuba</p>
+        <p><b>Features</b></p>
+        <p class="indent">
+          A. In this system all important decisions regarding economic activities are taken by government.<br>
+          B. Government seeks to control what to produce and how to allocate the resources.<br>
+          C. Main objective to attaining maximum social welfare.<br>
+          D. Profit maximization is not a main motive in this economy.<br>
+          E. Government produces the goods preferably for poor people with less prices.<br>
+          F. Government solves all economic problem.
+        </p>
+      </div>
+    </div>
+
+    <!-- Q5: Market economy (Textbook) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>How does the Market economy work?</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q27</span><span class="tag qb">Question Bank · VI.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In a market economy, all economic activities are organised through the market.</p>
+        <p>A market, as studied in economics, is an institution which organises the free interaction of individuals pursuing their respective economic activities. In other words, a market is a set of arrangements where economic agents can freely exchange their endowments or products with each other.</p>
+        <p>The term 'market' in economics has nothing as such to do with a marketplace. Buyers and sellers may or may not meet in an actual physical location. They can interact in a village chowk or a super bazaar in a city, or through telephone or internet.</p>
+        <p>The arrangements which allow people to buy and sell commodities freely are the defining features of a market.</p>
+        <p>For the smooth functioning of any system, there must be coordination among the activities of its different parts; otherwise there can be chaos. In a market system, this coordination among millions of isolated individuals is brought about by prices.</p>
+        <p>In a market system, all goods or services come with a price, mutually agreed upon by the buyers and sellers, at which the exchanges take place. The price reflects, on an average, the society's valuation of the good or service.</p>
+        <p>If the buyers demand more of a certain good, the price of that good will rise. This signals to the producers that society as a whole wants more of that good than is currently being produced, and the producers are likely to increase their production.</p>
+        <p>In this way, prices of goods and services send important information to all the individuals across the market and help achieve coordination in a market system.</p>
+        <p>Thus, in a market system, the central problems regarding how much and what to produce are solved through the coordination of economic activities brought about by the price signals.</p>
+
+        <div class="box" style="margin-top:10px;">
+          <h4>How price signals work in a market economy</h4>
+          <div class="flow">
+            <div class="step">Buyers demand more of a good</div>
+            <div class="arrow">&#8595;</div>
+            <div class="step">Price of that good rises</div>
+            <div class="arrow">&#8595;</div>
+            <div class="step">Signal to producers: society wants more of the good</div>
+            <div class="arrow">&#8595;</div>
+            <div class="step">Producers increase production</div>
+            <div class="arrow">&#8595;</div>
+            <div class="step">Coordination: what and how much to produce is solved</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>Micro Chapter 1 · Introduction</footer>
+</div>
+
+</body>
+</html>

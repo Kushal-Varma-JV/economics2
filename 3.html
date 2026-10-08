@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics – Chapter 3: Production and Costs</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f3f5f9;
+    color: #222;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  /* ---------- Chapter tabs ---------- */
+  .tabs {
+    position: sticky; top: 0; z-index: 10;
+    background: #1f3c88;
+    display: flex; overflow-x: auto; white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+  .tabs a {
+    color: #dfe6ff; text-decoration: none;
+    padding: 14px 16px; font-weight: 600; font-size: 15px;
+    flex-shrink: 0; border-bottom: 3px solid transparent;
+  }
+  .tabs a.active { color: #fff; border-bottom-color: #ffcc33; background: rgba(255,255,255,.08); }
+  /* ---------- Layout ---------- */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 16px 14px 60px; }
+  header h1 { font-size: 1.45rem; margin: 6px 0 2px; color: #1f3c88; }
+  header p { margin: 0 0 12px; color: #555; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+  .jump a {
+    background: #fff; border: 1px solid #c9d3ea; color: #1f3c88;
+    padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 14px;
+  }
+  section { margin-top: 26px; }
+  section > h2 {
+    font-size: 1.15rem; background: #1f3c88; color: #fff;
+    padding: 10px 14px; border-radius: 8px; margin: 0 0 12px;
+  }
+  .q {
+    background: #fff; border-radius: 10px; padding: 14px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  .q.cv { background: #fffcf3; }   /* slight tint for converted questions */
+  .qtext { font-weight: 600; margin: 0 0 8px; }
+  .qnum { color: #1f3c88; margin-right: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 12px; font-weight: 600; }
+  .tag.mq { background: #e3ecff; color: #1f3c88; }
+  .tag.qb { background: #e2f5e9; color: #1b6b3a; }
+  .tag.tn { background: #fff0dc; color: #9a5300; }
+  .opts { list-style: none; padding: 0; margin: 0 0 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .opts li { background: #f4f6fb; padding: 6px 10px; border-radius: 6px; font-size: 15px; }
+  .opts li.right { background: #d9f2e1; font-weight: 700; color: #1b6b3a; }
+  .ans {
+    border-left: 4px solid #2e9e5b; background: #f6fbf8;
+    padding: 10px 12px; border-radius: 0 8px 8px 0;
+  }
+  .ans .lbl { font-size: 12px; font-weight: 700; color: #2e9e5b; text-transform: uppercase; letter-spacing: .5px; display: block; margin-bottom: 4px; }
+  .ans p { margin: 6px 0; }
+  .ans ul, .ans ol { margin: 6px 0; padding-left: 22px; }
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; background: #fff; }
+  th, td { border: 1px solid #c9d3ea; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eef2fb; }
+  td.c, th.c { text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 10px 0; }
+  @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
+  .box { border: 1px solid #c9d3ea; border-radius: 8px; padding: 10px; background: #fff; }
+  .box h4 { margin: 0 0 6px; font-size: 15px; text-align: center; }
+  svg { width: 100%; height: auto; display: block; }
+  .formula {
+    display: inline-block; background: #eef2fb; color: #1f3c88; font-weight: 700;
+    padding: 4px 10px; border-radius: 6px; margin: 4px 0;
+  }
+  .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 4px; }
+  .frac span:first-child { border-bottom: 2px solid #1f3c88; padding: 0 4px; }
+  .indent { padding-left: 18px; }
+  footer { text-align: center; color: #777; font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<!-- ===== Chapter Tabs ===== -->
+<nav class="tabs">
+  <a href="index.html">Chapter 1</a>
+  <a href="2.html">Chapter 2</a>
+  <a href="3.html" class="active">Chapter 3</a>
+  <a href="4.html">Chapter 4</a>
+  <a href="5.html">Chapter 5</a>
+  <a href="6.html">Chapter 1 (macro)</a>
+</nav>
+
+<div class="wrap">
+  <header>
+    <h1>Micro Chapter 3: Production and Costs</h1>
+    <p>Introductory Microeconomics</p>
+    <div class="legend">
+      <span class="tag mq">Model Question</span>
+      <span class="tag qb">Question Bank</span>
+      <span class="tag tn">Teacher's Notes</span>
+    </div>
+  </header>
+
+  <div class="jump">
+    <a href="#mcq">Choose the answer</a>
+    <a href="#fib">Fill in the blanks</a>
+    <a href="#one">One word / sentence</a>
+    <a href="#two">2 Marks</a>
+    <a href="#four">4 Marks</a>
+    <a href="#six">6 Marks</a>
+    <a href="#five">5 Marks</a>
+  </div>
+
+  <!-- ================= SECTION A: MCQ ================= -->
+  <section id="mcq">
+    <h2>A. Choose the correct answer (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>The functional relationship between inputs and output is called as</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.1</span></div>
+      <ul class="opts">
+        <li>a) Consumption Function</li>
+        <li class="right">b) Production Function</li>
+        <li>c) Savings Function</li>
+        <li>d) Investment Function</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>b) Production Function</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>The formula of production function is</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.2</span></div>
+      <ul class="opts">
+        <li class="right">a) q = f (L, K)</li>
+        <li>b) q = d (p)</li>
+        <li>c) y = f (x)</li>
+        <li>d) q = a - bp</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) q = f (L, K)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>In the short run, a firm</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.3</span></div>
+      <ul class="opts">
+        <li>a) Can change all inputs</li>
+        <li>b) Cannot vary any inputs</li>
+        <li class="right">c) Can change any one input</li>
+        <li>d) All inputs remain constant</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>c) Can change any one input</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>The change in output per unit of change in the input is called</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.4</span></div>
+      <ul class="opts">
+        <li class="right">a) Marginal Product</li>
+        <li>b) Average Product</li>
+        <li>c) Total Product</li>
+        <li>d) Maximum Product</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) Marginal Product</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>The Long run production analysis is explained by</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.5</span></div>
+      <ul class="opts">
+        <li>a) Law of demand</li>
+        <li>b) Law of supply</li>
+        <li class="right">c) Law of returns to scale</li>
+        <li>d) Law of variable proportions</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>c) Law of returns to scale</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>The Cobb-Douglas production function is</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q2</span><span class="tag qb">Question Bank · I.6</span></div>
+      <ul class="opts">
+        <li>a) q = (x, x)</li>
+        <li>b) q = (x<sub>1</sub>, x<sub>2</sub>)</li>
+        <li class="right">c) q = (x<sub>1</sub><sup>α</sup>, x<sub>2</sub><sup>β</sup>)</li>
+        <li>d) q = (x<sub>0</sub>, x<sub>1</sub>)</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>c) q = x<sub>1</sub><sup>α</sup> x<sub>2</sub><sup>β</sup></div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>Find the Total cost where TFC is 100 and TVC is 125.</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.7</span></div>
+      <ul class="opts">
+        <li>a) 25</li>
+        <li>b) 125</li>
+        <li>c) 175</li>
+        <li class="right">d) 225</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>d) 225 &nbsp;(TC = TFC + TVC = 100 + 125 = 225)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">8.</span>Find Total Cost when TFC is 200 and TVC is 225.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>425 &nbsp;(TC = TFC + TVC = 200 + 225 = 425)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">9.</span>The shape of the Average fixed cost curve is</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.8</span></div>
+      <ul class="opts">
+        <li class="right">a) Rectangular hyperbola</li>
+        <li>b) 'U' shaped</li>
+        <li>c) Inversely 'U' shaped</li>
+        <li>d) Horizontal</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) Rectangular hyperbola</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B: FILL IN THE BLANKS ================= -->
+  <section id="fib">
+    <h2>B. Fill in the blanks (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>________ is the set of all possible combinations of two inputs that yield the same maximum possible level of output.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q6</span><span class="tag qb">Question Bank · II.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Isoquant</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>In the long run all inputs are ________.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Variable</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>________ is defined as output per unit of variable input.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Average product</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Marginal product and Average product curves are ________ in shape.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Inverse 'U'</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>SMC curve cuts AVC curve at the ________ point of AVC curve from below.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Minimum</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION C: ONE WORD / SENTENCE ================= -->
+  <section id="one">
+    <h2>C. Answer in a word / sentence (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Give the meaning of Production.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q12</span><span class="tag qb">Question Bank · IV.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Production is the process by which inputs are transformed into 'output'.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>What is Production cost?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>In order to acquire inputs a firm has to pay for them. This is called the cost of production.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>How does a firm earn revenue?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Once output has been produced, the firm sells it in the market and earns revenue.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>What do you mean by firm's profit?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The difference between the revenue and cost is called the firm's profit.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>What do you mean by Total product?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The relationship between the variable input and output, keeping all other inputs constant, is referred to as Total Product (TP) of the variable input.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>State the law that explains the short-run production analysis.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q12</span><span class="tag qb">Question Bank · IV.6</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Law of Variable Proportions</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>Name the Returns to scale when the output increases by more than 10%, for a 10% increase in the inputs.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q13</span><span class="tag qb">Question Bank · IV.7</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Increasing Returns to Scale (IRS)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">8.</span>Write the meaning of Cost function of the firm.</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.8</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The cost function describes the least cost of producing each level of output given prices of factors of production and technology.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">9.</span>What is Total fixed cost?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.9</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The cost that a firm incurs to employ the fixed inputs in the short run is called the total fixed cost (TFC). Whatever amount of output the firm produces, this cost remains fixed.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">10.</span>Write the formula of Average variable cost.</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.10</span></div>
+      <div class="ans"><span class="lbl">Answer</span><span class="formula">AVC = <span class="frac"><span>TVC</span><span>q</span></span></span></div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">11.</span>Write the formula of MP<sub>L</sub>.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-11b</span><span class="tag qb">Question Bank · III.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>MP<sub>L</sub> = TP<sub>L</sub> – TP<sub>L-1</sub></div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">12.</span>What is the expansion of CRS?</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-11b</span><span class="tag qb">Question Bank · III.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Constant returns to scale</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">13.</span>What is the expansion of SAC?</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-11a</span><span class="tag qb">Question Bank · III.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Short run average cost</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">14.</span>TFC + TVC is equal to?</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>TC (Total cost)</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">15.</span>Write the formula of SMC.</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>SMC = ΔTC / ΔQ</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION D: 2 MARKS ================= -->
+  <section id="two">
+    <h2>D. Answer in about 4 sentences (2 marks each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Give the meaning of Short-run and Long-run concepts.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q19</span><span class="tag qb">Question Bank · V.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>Short run:</b> In the short run, at least one of the factors – labour or capital – cannot be varied, and therefore remains fixed. In order to vary the output level, the firm can vary only the other factor. The factor that remains fixed is called the fixed factor, and the factor which the firm can vary is called the variable factor.</p>
+        <p><b>Long run:</b> In the long run, all factors of production can be varied. A firm may vary both the inputs simultaneously. So, in the long run, there is no fixed factor.</p>
+        <p>We define a period as long run or short run simply by looking at whether all the inputs can be varied or not, and not in terms of days, months or years.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>State the types of Returns to scale.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q19</span><span class="tag qb">Question Bank · V.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <ol>
+          <li><b>Constant Returns to Scale (CRS):</b> When a proportional increase in all inputs results in an increase in output by the same proportion.</li>
+          <li><b>Increasing Returns to Scale (IRS):</b> When a proportional increase in all inputs results in an increase in output by a larger proportion.</li>
+          <li><b>Decreasing Returns to Scale (DRS):</b> When a proportional increase in all inputs results in an increase in output by a smaller proportion.</li>
+        </ol>
+        <p><b>Example:</b> If all inputs are doubled and output gets doubled, it is CRS; if output is more than doubled, it is IRS; if output is less than doubled, it is DRS.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>Name any two Short run costs.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q19</span><span class="tag qb">Question Bank · V.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <ol>
+          <li><b>Total Fixed Cost (TFC):</b> The cost that a firm incurs to employ the fixed inputs. Whatever amount of output the firm produces, this cost remains fixed.</li>
+          <li><b>Total Variable Cost (TVC):</b> The cost that a firm incurs to employ the variable inputs. As output increases, total variable cost increases.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>What are Long run costs?</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q19</span><span class="tag qb">Question Bank · V.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In the long run, all inputs are variable. There are no fixed costs. The total cost and the total variable cost therefore coincide in the long run.</p>
+        <ol>
+          <li><b>Long run average cost (LRAC)</b> is the cost per unit of output: LRAC = TC / q</li>
+          <li><b>Long run marginal cost (LRMC)</b> is the change in total cost per unit of change in output: LRMC = (TC at q<sub>1</sub> units) – (TC at q<sub>1</sub> – 1 units)</li>
+        </ol>
+        <p>In the long run, the sum of all marginal costs up to some output level gives us the total cost at that level.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>What is Long run Average Cost? Write its formula.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q19</span><span class="tag qb">Question Bank · V.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In the long run, all inputs are variable and there are no fixed costs. Long run average cost (LRAC) is defined as the cost per unit of output.</p>
+        <p><span class="formula">LRAC = <span class="frac"><span>TC</span><span>q</span></span></span> &nbsp;(where TC is total cost and q is the output)</p>
+        <p>The LRAC curve is a 'U'-shaped curve.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION E: 4 MARKS ================= -->
+  <section id="four">
+    <h2>E. Answer in about 12 sentences (4 marks each)</h2>
+
+    <!-- VI.1 Isoquant (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Explain Isoquant with the help of the diagram.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.1</span><span class="tag tn">Teacher's Notes · I.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>An Isoquant is the set of all possible combinations of two inputs (labour and capital) which yield same maximum possible level of output.</p>
+        <p>Each Isoquant represents a particular level of output.</p>
+        <p>It can be represented with the help of the following diagram. In the diagram ox axis represents labour and oy axis represents the capital. Q1, Q2, Q3 shows Isoquant curve. Q2 curve gives higher level of output than Q1, Q3. Q2 represents different combinations of two inputs that yield same level of output.</p>
+
+        <div class="box" style="margin-top:10px;">
+          <h4>Diagram</h4>
+          <svg viewBox="0 0 420 295" role="img" aria-label="Isoquants">
+            <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+            <text x="50" y="14" font-size="13" text-anchor="middle" fill="#333">Y</text>
+            <text x="396" y="255" font-size="13" fill="#333">X</text>
+            <text x="40" y="264" font-size="13" text-anchor="end" fill="#333">O</text>
+            <text x="18" y="150" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 18 150)">Factor 2 – Capital</text>
+            <text x="320" y="285" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold">Factor 1 – Labour</text>
+            <g stroke="#666" stroke-width="1.2" fill="none">
+              <path d="M50,100 H90 V250"/>
+              <path d="M50,190 H233.3"/>
+              <path d="M150,190 V250"/>
+              <path d="M233.3,190 V250"/>
+            </g>
+            <g fill="none" stroke="#1f6fd1" stroke-width="2.6" stroke-linejoin="round">
+              <polyline points="80,50 90,100 100,130 110,150 130,175 150,190 180,203.8 210,212.5 250,220 300,226 340,229.3"/>
+              <polyline points="100,30 110,66.7 125,103.3 140,127.8 160,150 190,171.4 233.3,190 270,200 300,206 340,212.1"/>
+              <polyline points="130,25 145,60.5 160,86.4 180,111.5 210,137.5 250,160 300,178 340,188"/>
+            </g>
+            <g font-size="13" fill="#222">
+              <text x="44" y="104" text-anchor="end">K<tspan font-size="10" dy="3">2</tspan></text>
+              <text x="44" y="194" text-anchor="end">K<tspan font-size="10" dy="3">1</tspan></text>
+              <text x="90" y="266" text-anchor="middle">L<tspan font-size="10" dy="3">1</tspan></text>
+              <text x="150" y="266" text-anchor="middle">L<tspan font-size="10" dy="3">2</tspan></text>
+              <text x="233" y="266" text-anchor="middle">L<tspan font-size="10" dy="3">3</tspan></text>
+              <text x="344" y="234">q = q<tspan font-size="10" dy="3">1</tspan></text>
+              <text x="344" y="215">q = q<tspan font-size="10" dy="3">2</tspan></text>
+              <text x="344" y="191">q = q<tspan font-size="10" dy="3">3</tspan></text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.2 TP AP MP (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Explain Total Product, Average Product and Marginal Product with examples.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.2</span><span class="tag tn">Teacher's Notes · I.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Total product refers to the <b>total Volume of goods and services Produced during a year</b>.</p>
+        <p>Average product refers to the <b>per unit production of a variable factor.</b></p>
+        <p><span class="formula">AP = <span class="frac"><span>TP<sub>L</sub></span><span>L</span></span></span></p>
+        <p class="indent">AP = Average product<br>TPL=Total product L=Number of units of variable factor</p>
+        <p>Marginal Product is the <b>change in output per unit of change in the input.</b></p>
+        <p><span class="formula">MP<sub>L</sub> = <span class="frac"><span>ΔTP<sub>L</sub></span><span>ΔL</span></span></span></p>
+        <p class="indent">MPL = Marginal Product of labour<br>ΔTPL = Change in output<br>ΔL=Total product of 'n- 1' units</p>
+        <p>The TP, AP and MP can be understood with the help of the following table-</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Labour</th><th class="c">Total Product (TP)</th><th class="c">MP<sub>L</sub></th><th class="c">AP<sub>L</sub></th><th>Explanation</th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">-</td><td class="c">-</td><td rowspan="7">In this table when we are using first 3 unit of labour input TP, AP, MP are Increases at an increasing rate.<br><br>After 4<sup>th</sup> unit to 6<sup>th</sup> unit of labour input, TP continues to increase and both MP and AP decreases.</td></tr>
+            <tr><td class="c">1</td><td class="c">10</td><td class="c">10</td><td class="c">10</td></tr>
+            <tr><td class="c">2</td><td class="c">24</td><td class="c">14</td><td class="c">12</td></tr>
+            <tr><td class="c">3</td><td class="c">40</td><td class="c">16</td><td class="c">13.33</td></tr>
+            <tr><td class="c">4</td><td class="c">50</td><td class="c">10</td><td class="c">12.5</td></tr>
+            <tr><td class="c">5</td><td class="c">56</td><td class="c">6</td><td class="c">11.2</td></tr>
+            <tr><td class="c">6</td><td class="c">57</td><td class="c">1</td><td class="c">9.5</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.3 TPL table (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>The following table gives the Total Product (TP<sub>L</sub>) schedule of labour. Find the corresponding Average Product (AP<sub>L</sub>) and Marginal Product (MP<sub>L</sub>) of labour.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.3</span><span class="tag tn">Teacher's Notes · I.4</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>L</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td></tr>
+          <tr><th>TP<sub>L</sub></th><td class="c">0</td><td class="c">15</td><td class="c">35</td><td class="c">50</td><td class="c">60</td><td class="c">68</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Output (Q)</th><th class="c">TP<sub>L</sub></th><th class="c">MP<sub>L</sub><br><small>(MP= TPn-TPn-1)</small></th><th class="c">AP<sub>L</sub><br><small>(AP= TP/Q)</small></th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+            <tr><td class="c">1</td><td class="c">15</td><td class="c">15</td><td class="c">15</td></tr>
+            <tr><td class="c">2</td><td class="c">35</td><td class="c">20</td><td class="c">17.5</td></tr>
+            <tr><td class="c">3</td><td class="c">50</td><td class="c">15</td><td class="c">16.66</td></tr>
+            <tr><td class="c">4</td><td class="c">60</td><td class="c">10</td><td class="c">15</td></tr>
+            <tr><td class="c">5</td><td class="c">68</td><td class="c">8</td><td class="c">13.6</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.4 Returns to scale (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Write about returns to scale.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.4</span><span class="tag tn">Teacher's Notes · I.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>A. Increasing returns to scale (IRS):</b> When a proportional increase in all inputs results in an increase in output by a larger proportion is called as Increasing Returns to Scale. Eg: a 10 percent increase in all factor input results in 20 percent increase in total output.</p>
+        <p><b>B. Constant returns to scale (IRS):</b> When a proportional increase in all inputs results in an increase in output by the same proportion is called as Constant Returns to Scale. Eg: a 10 percent increase in all factor input results in 10 percent increase in total output.</p>
+        <p><b>C. Decreasing Returns to scale (DRS):</b> When a proportional increase in all inputs results in an increase in output by a smaller proportion is called as Decreasing Returns to Scale. Eg: a 10 percent increase in all factor input results in 5 percent increase in total output.</p>
+
+        <div class="box" style="margin-top:10px;">
+          <svg viewBox="0 0 400 270" role="img" aria-label="Returns to scale">
+            <line x1="50" y1="20" x2="50" y2="240" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="240" x2="380" y2="240" stroke="#333" stroke-width="2"/>
+            <text x="50" y="14" font-size="13" text-anchor="middle" fill="#333">Y</text>
+            <text x="386" y="245" font-size="13" fill="#333">X</text>
+            <text x="42" y="256" font-size="13" text-anchor="end" fill="#333">O</text>
+            <polyline points="80,225 150,100 270,100 340,225" fill="none" stroke="#1f6fd1" stroke-width="3" stroke-linejoin="round"/>
+            <g font-size="14" font-weight="bold" fill="#1f3c88">
+              <text x="88" y="160">IRS</text>
+              <text x="210" y="90" text-anchor="middle">CRS</text>
+              <text x="312" y="160">DRS</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.5 TVC schedule (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>The following table gives the TVC schedule of a firm. TFC is Rs.10. Find out AFC and AVC.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.5</span><span class="tag tn">Teacher's Notes · I.5</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Q</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td></tr>
+          <tr><th>TVC</th><td class="c">0</td><td class="c">15</td><td class="c">26</td><td class="c">33</td><td class="c">40</td><td class="c">55</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Q</th><th class="c">TVC</th><th class="c">TFC<br><small>(given)</small></th><th class="c">AVC<br><small>(TVC/Q)</small></th><th class="c">AFC<br><small>(TFC/Q)</small></th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">10</td><td class="c">0</td><td class="c">-</td></tr>
+            <tr><td class="c">1</td><td class="c">15</td><td class="c">10</td><td class="c">15</td><td class="c">10</td></tr>
+            <tr><td class="c">2</td><td class="c">26</td><td class="c">10</td><td class="c">13</td><td class="c">05</td></tr>
+            <tr><td class="c">3</td><td class="c">33</td><td class="c">10</td><td class="c">11</td><td class="c">3.33</td></tr>
+            <tr><td class="c">4</td><td class="c">40</td><td class="c">10</td><td class="c">10</td><td class="c">2.5</td></tr>
+            <tr><td class="c">5</td><td class="c">55</td><td class="c">10</td><td class="c">11</td><td class="c">2</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.6 SAC SMC diagram (TN) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>Draw Short run Average cost (SAC) and Short run Marginal cost (SMC) curves by using the following data in a diagram.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.6</span><span class="tag tn">Teacher's Notes · I.6</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Q</th><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td><td class="c">7</td></tr>
+          <tr><th>SAC</th><td class="c">60</td><td class="c">45</td><td class="c">25</td><td class="c">15</td><td class="c">20</td><td class="c">30</td><td class="c">50</td></tr>
+          <tr><th>SMC</th><td class="c">50</td><td class="c">30</td><td class="c">20</td><td class="c">15</td><td class="c">25</td><td class="c">45</td><td class="c">60</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="box">
+          <svg viewBox="0 0 410 295" role="img" aria-label="SAC and SMC curves plotted from the given data">
+            <g stroke="#e5e9f2" stroke-width="1">
+              <line x1="50" y1="220" x2="380" y2="220"/><line x1="50" y1="190" x2="380" y2="190"/>
+              <line x1="50" y1="160" x2="380" y2="160"/><line x1="50" y1="130" x2="380" y2="130"/>
+              <line x1="50" y1="100" x2="380" y2="100"/><line x1="50" y1="70" x2="380" y2="70"/>
+              <line x1="50" y1="40" x2="380" y2="40"/>
+              <line x1="95" y1="30" x2="95" y2="250"/><line x1="140" y1="30" x2="140" y2="250"/>
+              <line x1="185" y1="30" x2="185" y2="250"/><line x1="230" y1="30" x2="230" y2="250"/>
+              <line x1="275" y1="30" x2="275" y2="250"/><line x1="320" y1="30" x2="320" y2="250"/>
+              <line x1="365" y1="30" x2="365" y2="250"/>
+            </g>
+            <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="250" x2="385" y2="250" stroke="#333" stroke-width="2"/>
+            <g font-size="12" fill="#444" text-anchor="end">
+              <text x="44" y="224">10</text><text x="44" y="194">20</text><text x="44" y="164">30</text>
+              <text x="44" y="134">40</text><text x="44" y="104">50</text><text x="44" y="74">60</text>
+              <text x="44" y="44">70</text>
+            </g>
+            <g font-size="12" fill="#444" text-anchor="middle">
+              <text x="95" y="266">1</text><text x="140" y="266">2</text><text x="185" y="266">3</text>
+              <text x="230" y="266">4</text><text x="275" y="266">5</text><text x="320" y="266">6</text>
+              <text x="365" y="266">7</text>
+            </g>
+            <text x="16" y="145" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 16 145)">Cost</text>
+            <text x="215" y="287" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold">Quantity</text>
+            <polyline points="95,70 140,115 185,175 230,205 275,190 320,160 365,100" fill="none" stroke="#1f9bd1" stroke-width="2.6" stroke-linejoin="round"/>
+            <polyline points="95,100 140,160 185,190 230,205 275,175 320,115 365,70" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linejoin="round"/>
+            <g fill="#1f9bd1"><circle cx="95" cy="70" r="3"/><circle cx="140" cy="115" r="3"/><circle cx="185" cy="175" r="3"/><circle cx="275" cy="190" r="3"/><circle cx="320" cy="160" r="3"/><circle cx="365" cy="100" r="3"/></g>
+            <g fill="#c0392b"><circle cx="95" cy="100" r="3"/><circle cx="140" cy="160" r="3"/><circle cx="185" cy="190" r="3"/><circle cx="230" cy="205" r="3.5"/><circle cx="275" cy="175" r="3"/><circle cx="320" cy="115" r="3"/><circle cx="365" cy="70" r="3"/></g>
+            <text x="370" y="104" font-size="12" fill="#1f9bd1" font-weight="bold">SAC</text>
+            <text x="370" y="68" font-size="12" fill="#c0392b" font-weight="bold">SMC</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.7 Long run cost curves (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>Explain the shapes of various Long run cost curves.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.7</span><span class="tag tn">Teacher's Notes · I.7</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In the long run all the factors of production can be changed. So, all factors are variable in the long run.</p>
+        <p><span class="formula">LRAC = <span class="frac"><span>TC</span><span>q</span></span></span></p>
+        <p>Long run costs are as follows:</p>
+        <p>Long run average cost (LRAC): It is defined as cost per unit of output</p>
+        <p>Long run marginal cost (LRMC): it is the change in total cost per unit of change in output.</p>
+
+        <div class="two-col">
+          <div class="box">
+            <h4>SHAPES OF THE LONG RUN COST CURVES</h4>
+            <p>LAC &amp; LMC curve are U shaped because of law of returns to scale in the long run period of time.</p>
+            <p>LMC curve cuts LAC curve its minimum point.</p>
+            <p>Both LAC and LMC Curve initially decrease and later increases.</p>
+            <p style="margin-bottom:0;">LAC and LMC decreases initially due to the operating of IRS. In the middle it is flat due to the operation of CRS. And finally, LAC and LMC increases due to the operation of DRS.</p>
+          </div>
+          <div class="box">
+            <h4>Diagram</h4>
+            <svg viewBox="0 0 400 295" role="img" aria-label="U-shaped LRAC and LRMC curves">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="16" font-size="14" fill="#1f3c88" font-weight="bold">Cost</text>
+              <text x="380" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end" fill="#333">O</text>
+              <path d="M80,90 Q220,250 360,90" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M80,90 C110,240 185,225 220,170 S265,70 280,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="220" y1="170" x2="220" y2="250" stroke="#555" stroke-width="1.2"/>
+              <circle cx="220" cy="170" r="4" fill="#1f3c88"/>
+              <text x="212" y="162" font-size="13" text-anchor="end" font-weight="bold">M</text>
+              <text x="220" y="266" font-size="13" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              <text x="362" y="88" font-size="13" fill="#1f3c88" font-weight="bold">LRAC</text>
+              <text x="284" y="38" font-size="13" fill="#1f3c88" font-weight="bold">LRMC</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION F: 6 MARKS ================= -->
+  <section id="six">
+    <h2>F. Answer in about 20 sentences (6 marks each)</h2>
+
+    <!-- VII.1 LVP (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Explain the Law of Variable Proportions with the help of a diagram.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q37</span><span class="tag qb">Question Bank · VII.1</span><span class="tag tn">Teacher's Notes · II.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The law of variable proportion explains the relationship between proportion of fixed Input and variable Input on the one hand and output on the other hand.</p>
+        <p>The law of diminishing marginal product says that if we keep increasing the employment of an input, with other inputs fixed, eventually a point will be reached after which the resulting addition to output (marginal product of that input) will start falling.</p>
+        <p>The following table shows the total product, marginal product &amp; Average product for variable input</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Factor 1</th><th class="c">TP</th><th class="c">MP<sub>1</sub></th><th class="c">AP<sub>1</sub></th><th>Explanation</th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td rowspan="7">As shown in the table, When increase the employment of input continuously, the total product increases continuously but marginal product up to 3<sup>rd</sup> Unit increases continuously and from4<sup>th</sup> unit it is become declines.</td></tr>
+            <tr><td class="c">1</td><td class="c">10</td><td class="c">10</td><td class="c">10</td></tr>
+            <tr><td class="c">2</td><td class="c">24</td><td class="c">14</td><td class="c">12</td></tr>
+            <tr><td class="c">3</td><td class="c">40</td><td class="c">16</td><td class="c">13.33</td></tr>
+            <tr><td class="c">4</td><td class="c">50</td><td class="c">10</td><td class="c">12.5</td></tr>
+            <tr><td class="c">5</td><td class="c">56</td><td class="c">6</td><td class="c">11.2</td></tr>
+            <tr><td class="c">6</td><td class="c">57</td><td class="c">1</td><td class="c">9.5</td></tr>
+          </table>
+        </div>
+        <p>A somewhat related concept with the law of diminishing marginal product is the law of variable proportions.</p>
+        <p>In the diagram below 'ox' axis measures units of labour and 'oy' axis represents output. TP curve increases as labour input increases, and MP curve increases beginning and after started to fall.</p>
+        <p>AP curve also slightly increases and after it falls.</p>
+
+        <div class="box" style="margin-top:10px;">
+          <h4>DIAGRAM</h4>
+          <svg viewBox="0 0 400 295" role="img" aria-label="TP, AP and MP curves plotted from the table">
+            <g stroke="#e5e9f2" stroke-width="1">
+              <line x1="50" y1="215" x2="350" y2="215"/><line x1="50" y1="180" x2="350" y2="180"/>
+              <line x1="50" y1="145" x2="350" y2="145"/><line x1="50" y1="110" x2="350" y2="110"/>
+              <line x1="50" y1="75" x2="350" y2="75"/><line x1="50" y1="40" x2="350" y2="40"/>
+              <line x1="100" y1="35" x2="100" y2="250"/><line x1="150" y1="35" x2="150" y2="250"/>
+              <line x1="200" y1="35" x2="200" y2="250"/><line x1="250" y1="35" x2="250" y2="250"/>
+              <line x1="300" y1="35" x2="300" y2="250"/><line x1="350" y1="35" x2="350" y2="250"/>
+            </g>
+            <line x1="50" y1="25" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+            <text x="50" y="18" font-size="13" text-anchor="middle" fill="#333">Y</text>
+            <g font-size="12" fill="#444" text-anchor="end">
+              <text x="44" y="219">10</text><text x="44" y="184">20</text><text x="44" y="149">30</text>
+              <text x="44" y="114">40</text><text x="44" y="79">50</text><text x="44" y="44">60</text>
+            </g>
+            <g font-size="12" fill="#444" text-anchor="middle">
+              <text x="50" y="266">0</text><text x="100" y="266">1</text><text x="150" y="266">2</text>
+              <text x="200" y="266">3</text><text x="250" y="266">4</text><text x="300" y="266">5</text>
+              <text x="350" y="266">6</text>
+            </g>
+            <text x="16" y="145" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 16 145)">Output</text>
+            <text x="200" y="287" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold">Labour</text>
+            <polyline points="50,250 100,215 150,166 200,110 250,75 300,54 350,50.5" fill="none" stroke="#1f3c88" stroke-width="2.6" stroke-linejoin="round"/>
+            <polyline points="100,215 150,208 200,203.3 250,206.25 300,210.8 350,216.75" fill="none" stroke="#2e9e5b" stroke-width="2.6" stroke-linejoin="round"/>
+            <polyline points="100,215 150,201 200,194 250,215 300,229 350,246.5" fill="none" stroke="#c0392b" stroke-width="2.6" stroke-linejoin="round"/>
+            <g fill="#1f3c88"><circle cx="50" cy="250" r="3"/><circle cx="100" cy="215" r="3"/><circle cx="150" cy="166" r="3"/><circle cx="200" cy="110" r="3"/><circle cx="250" cy="75" r="3"/><circle cx="300" cy="54" r="3"/><circle cx="350" cy="50.5" r="3"/></g>
+            <g fill="#2e9e5b"><circle cx="150" cy="208" r="3"/><circle cx="200" cy="203.3" r="3"/><circle cx="250" cy="206.25" r="3"/><circle cx="300" cy="210.8" r="3"/><circle cx="350" cy="216.75" r="3"/></g>
+            <g fill="#c0392b"><circle cx="150" cy="201" r="3"/><circle cx="200" cy="194" r="3"/><circle cx="250" cy="215" r="3"/><circle cx="300" cy="229" r="3"/><circle cx="350" cy="246.5" r="3"/></g>
+            <text x="356" y="54" font-size="13" fill="#1f3c88" font-weight="bold">TP</text>
+            <text x="356" y="219" font-size="13" fill="#2e9e5b" font-weight="bold">AP</text>
+            <text x="356" y="246" font-size="13" fill="#c0392b" font-weight="bold">MP</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.2 Shapes TP AP MP (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Explain the shapes of Total Product (TP), Average Product (AP) and Marginal Product (MP) curves.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q37</span><span class="tag qb">Question Bank · VII.2</span><span class="tag tn">Teacher's Notes · II.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>TOTAL PRODUCT</b> - In the diagram below the 'ox' axis shows units of labour and 'oy' axis measure total product. With L unit of labour a firm can produce Q1 unit of output.</p>
+
+        <div class="box" style="margin:10px 0;">
+          <h4>Total product curves diagram</h4>
+          <svg viewBox="0 0 410 295" role="img" aria-label="Total product curve">
+            <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="250" x2="385" y2="250" stroke="#333" stroke-width="2"/>
+            <text x="50" y="14" font-size="13" text-anchor="middle" fill="#333">Y</text>
+            <text x="391" y="255" font-size="13" fill="#333">X</text>
+            <text x="40" y="264" font-size="13" text-anchor="end" fill="#333">O</text>
+            <text x="18" y="150" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 18 150)">Output</text>
+            <text x="130" y="285" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold">Labour</text>
+            <path d="M50,250 C130,248 150,120 230,85 S330,52 360,50" fill="none" stroke="#1f6fd1" stroke-width="2.8"/>
+            <line x1="50" y1="85" x2="230" y2="85" stroke="#555" stroke-width="1.2"/>
+            <line x1="230" y1="85" x2="230" y2="250" stroke="#555" stroke-width="1.2"/>
+            <text x="44" y="89" font-size="13" text-anchor="end">q<tspan font-size="10" dy="3">1</tspan></text>
+            <text x="230" y="266" font-size="13" text-anchor="middle">L1</text>
+            <text x="364" y="48" font-size="13" fill="#1f3c88" font-weight="bold">TP</text>
+          </svg>
+        </div>
+
+        <p><b>MARGINAL PRODUCT AND AVERAGE PRODUCT CURVES</b></p>
+        <p><b>Relationship between MP, and AP -</b></p>
+        <p>In the initial stage both marginal and average products go on increasing.<br>
+        AP, at its maximum, is equal to MP<br>
+        AP increases when MP is greater than AP<br>
+        When MP is lesser than AP, AP decreases.<br>
+        MP can be negative or zero but AP never becomes zero.<br>
+        Diagrammatically MP curve is always to the left of AP curve.<br>
+        <b>AP &amp; MP curves are inverse 'U' in shaped</b></p>
+
+        <div class="box" style="margin-top:10px;">
+          <h4>Diagram</h4>
+          <svg viewBox="0 0 420 295" role="img" aria-label="Average and marginal product curves">
+            <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+            <line x1="50" y1="250" x2="400" y2="250" stroke="#333" stroke-width="2"/>
+            <text x="40" y="264" font-size="13" text-anchor="end" fill="#333">O</text>
+            <text x="18" y="150" font-size="13" text-anchor="middle" fill="#1f3c88" font-weight="bold" transform="rotate(-90 18 150)">Output</text>
+            <text x="400" y="285" font-size="13" text-anchor="end" fill="#1f3c88" font-weight="bold">Factor 1</text>
+            <path d="M80,200 Q230,40 380,200" fill="none" stroke="#1f6fd1" stroke-width="2.8"/>
+            <path d="M80,200 C120,40 185,40 230,120 S285,225 295,245" fill="none" stroke="#1f6fd1" stroke-width="2.8"/>
+            <line x1="230" y1="120" x2="230" y2="250" stroke="#555" stroke-width="1.2"/>
+            <circle cx="230" cy="120" r="4" fill="#1f3c88"/>
+            <text x="238" y="112" font-size="13" font-weight="bold">P</text>
+            <text x="230" y="266" font-size="13" text-anchor="middle">x<tspan font-size="10" dy="3">1</tspan></text>
+            <text x="372" y="218" font-size="13" fill="#1f3c88" font-weight="bold">AP<tspan font-size="10" dy="3">1</tspan></text>
+            <text x="300" y="240" font-size="13" fill="#1f3c88" font-weight="bold">MP<tspan font-size="10" dy="3">1</tspan></text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.3 APL schedule (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>The following table gives the average product schedule of labour (AP<sub>L</sub>). Find the total product (TP<sub>L</sub>) and marginal product (MP<sub>L</sub>) schedule of Labour.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q37</span><span class="tag qb">Question Bank · VII.3</span><span class="tag tn">Teacher's Notes · II.6</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>L</th><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td></tr>
+          <tr><th>AP<sub>L</sub></th><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">4</td><td class="c">3</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">L</th><th class="c">AP<sub>L</sub></th><th class="c">TP<sub>L</sub><br><small>(TP= AP x L)</small></th><th class="c">MP<sub>L</sub><br><small>MP = TPn-TPn-1</small></th></tr>
+            <tr><td class="c">1</td><td class="c">2</td><td class="c">2</td><td class="c">2</td></tr>
+            <tr><td class="c">2</td><td class="c">3</td><td class="c">6</td><td class="c">4</td></tr>
+            <tr><td class="c">3</td><td class="c">4</td><td class="c">12</td><td class="c">6</td></tr>
+            <tr><td class="c">4</td><td class="c">5</td><td class="c">20</td><td class="c">8</td></tr>
+            <tr><td class="c">5</td><td class="c">4</td><td class="c">20</td><td class="c">0</td></tr>
+            <tr><td class="c">6</td><td class="c">3</td><td class="c">18</td><td class="c">-2</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.4 Various short run costs (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Explain the various Short run costs.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.4</span><span class="tag tn">Teacher's Notes · II.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>a) Total Fixed cost (TFC)</b></p>
+        <p>Fixed cost is payment made to the fixed factors. It does not change with the changes in the level of output. It remains fixed. For example: - Rent of factory, insurance premium</p>
+        <p><b>b) Total variable cost (TVC)</b></p>
+        <p>Total variable cost is the payment made to the variable factors of Production. It changes with the changes in the level of output. For example: - wages of temporary labors, Electricity.</p>
+        <p><b>c) Total cost (TC)</b></p>
+        <p>Adding the both the fixed and variable costs, we get the total cost (TC) of a firm.<br>It can be written as <b>TC= TFC+TVC</b></p>
+        <p><b>d) Average fixed cost (AFC)</b></p>
+        <p>Average fixed cost is the per unit fixed cost of production of a commodity.</p>
+        <p><span class="formula">AFC = <span class="frac"><span>TFC</span><span>Q</span></span></span></p>
+        <p class="indent">AFC = average fixed cost &nbsp; TFC = Total Fixed Cost<br>Q = No. of Units Produced</p>
+        <p><b>e) Average variable cost (AVC)</b></p>
+        <p>It is per unit variable cost of production of a commodity. We can obtain AVC by dividing the total variable cost by the number of units produced.</p>
+        <p><span class="formula">AVC = <span class="frac"><span>TVC</span><span>Q</span></span></span></p>
+        <p class="indent">AVC = Average variable cost TVC = Total Variable Cost<br>Q = No. of Units Produced.</p>
+        <p><b>f) Short run Average cost (SAC)</b></p>
+        <p>Average cost is the per unit total cost of production. So,</p>
+        <p><span class="formula">AC = <span class="frac"><span>TC</span><span>Q</span></span></span></p>
+        <p class="indent">AC = Average Cost &nbsp; TC = Total Cost<br>Q = No. of Units Produced</p>
+        <p><b>g) Short run Marginal cost (SMC)</b></p>
+        <p>Marginal cost is the cost of producing extra unit of a commodity. It is the additional to total cost by the production of an additional unit of the commodity. So,</p>
+        <p><b>MC = TCn-TCn-1</b> &nbsp; MC = Marginal Cost</p>
+        <p class="indent">TCn= Total cost of 'n' units, TCn-1 = Total Cost of n-1 units</p>
+      </div>
+    </div>
+
+    <!-- VII.5 Analyse SR cost curves (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Analyse the Short run cost curves of TFC, TVC, SAC and SMC with the help of diagrams.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q37</span><span class="tag qb">Question Bank · VII.5</span><span class="tag tn">Teacher's Notes · II.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>TFC represented in the following diagram.</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 400 285" role="img" aria-label="TFC curve">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="42" y="266" font-size="13" text-anchor="end" fill="#333">O</text>
+              <text x="58" y="30" font-size="13" fill="#1f3c88" font-weight="bold">Cost</text>
+              <text x="378" y="272" font-size="13" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <line x1="50" y1="130" x2="360" y2="130" stroke="#1f6fd1" stroke-width="3"/>
+              <line x1="50" y1="250" x2="220" y2="130" stroke="#555" stroke-width="1.5"/>
+              <line x1="220" y1="130" x2="220" y2="250" stroke="#555" stroke-width="1.2"/>
+              <path d="M80,250 A30,30 0 0 0 74.5,232.7" fill="none" stroke="#333" stroke-width="1.5"/>
+              <text x="86" y="242" font-size="12">θ</text>
+              <text x="44" y="134" font-size="13" text-anchor="end">F</text>
+              <text x="220" y="122" font-size="13" text-anchor="middle" font-weight="bold">A</text>
+              <text x="220" y="266" font-size="12" text-anchor="middle">q₀</text>
+              <text x="330" y="122" font-size="13" font-weight="bold" fill="#1f3c88">TFC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>TFC curve is the horizontal straight line cutting The vertical axis at <i>F</i>.</p>
+            <p>The AFC is calculated with the help of TFC</p>
+            <p style="margin-bottom:0;"><span class="formula">AFC = <span class="frac"><span>TFC</span><span>Quantity</span></span></span></p>
+          </div>
+        </div>
+
+        <p><b>TVC represented in the following diagram.</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 400 285" role="img" aria-label="TVC curve">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="42" y="266" font-size="13" text-anchor="end" fill="#333">O</text>
+              <text x="58" y="30" font-size="13" fill="#1f3c88" font-weight="bold">Cost</text>
+              <text x="378" y="272" font-size="13" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <path d="M50,250 C60,200 120,180 200,165 C270,150 320,110 350,40" fill="none" stroke="#1f6fd1" stroke-width="3"/>
+              <line x1="50" y1="250" x2="200" y2="165" stroke="#555" stroke-width="1.5"/>
+              <line x1="50" y1="165" x2="200" y2="165" stroke="#555" stroke-width="1.2"/>
+              <line x1="200" y1="165" x2="200" y2="250" stroke="#555" stroke-width="1.2"/>
+              <text x="44" y="169" font-size="13" text-anchor="end">V</text>
+              <text x="200" y="157" font-size="13" text-anchor="middle" font-weight="bold">E</text>
+              <text x="200" y="266" font-size="12" text-anchor="middle">q₀</text>
+              <text x="320" y="40" font-size="13" font-weight="bold" fill="#1f3c88">TVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>Here we measure output along the horizontal axis and TVC along the vertical axis.</p>
+            <p style="margin-bottom:0;"><span class="formula">AVC = <span class="frac"><span>TVC</span><span>output</span></span></span></p>
+          </div>
+        </div>
+
+        <p><b>Let us now look at SAC. SAC is the sum of AVC and AFC</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 400 285" role="img" aria-label="SMC, AVC and SAC curves">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="385" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="42" y="266" font-size="13" text-anchor="end" fill="#333">O</text>
+              <text x="58" y="30" font-size="13" fill="#1f3c88" font-weight="bold">Cost</text>
+              <text x="383" y="272" font-size="13" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <path d="M80,110 Q180,270 350,120" fill="none" stroke="#1f6fd1" stroke-width="2.5"/>
+              <path d="M100,60 Q220,250 370,90" fill="none" stroke="#1f6fd1" stroke-width="2.5"/>
+              <path d="M95,140 C125,240 175,215 202,193 C214,183 228,176 239,163 C252,148 280,95 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.5"/>
+              <line x1="202" y1="193" x2="202" y2="250" stroke="#555" stroke-width="1.2"/>
+              <line x1="239" y1="163" x2="239" y2="250" stroke="#555" stroke-width="1.2"/>
+              <circle cx="202" cy="193" r="3.5" fill="#1f3c88"/>
+              <circle cx="239" cy="163" r="3.5" fill="#1f3c88"/>
+              <text x="194" y="190" font-size="13" font-weight="bold" text-anchor="end">P</text>
+              <text x="232" y="156" font-size="13" font-weight="bold" text-anchor="end">S</text>
+              <text x="202" y="266" font-size="12" text-anchor="middle">q₁</text>
+              <text x="239" y="266" font-size="12" text-anchor="middle">q₂</text>
+              <text x="305" y="38" font-size="12" font-weight="bold" fill="#1f3c88">SMC</text>
+              <text x="352" y="84" font-size="12" font-weight="bold" fill="#1f3c88">SAC</text>
+              <text x="352" y="116" font-size="12" font-weight="bold" fill="#1f3c88">AVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>It shows the shapes of SMC, AVC, SAC for a typical firm.</p>
+            <p>AVC reaches its minimum at <i>q1</i> units of output.</p>
+            <p>AVC is falling and SMC is less than AVC. To the right of <i>q1</i>,</p>
+            <p>AVC is rising and SMC is greater than AVC.</p>
+            <p><b>SMC curve cuts the AVC curve at 'P' which is the minimum point of AVC curve.</b></p>
+            <p style="margin-bottom:0;">The SAC curve intersect SMC is '<i>S</i>'</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.6 SMC schedule TFC 100 (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>A firm's SMC schedule is shown in the following table. TFC is Rs.100. Find out TVC, TC, AVC and SAC schedule of the firm.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.6</span><span class="tag tn">Teacher's Notes · II.3</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Q</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td></tr>
+          <tr><th>SMC</th><td class="c">--</td><td class="c">500</td><td class="c">300</td><td class="c">200</td><td class="c">300</td><td class="c">500</td><td class="c">800</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Q</th><th class="c">SMC</th><th class="c">TFC</th><th class="c">TVC</th><th class="c">TC</th><th class="c">AFC</th><th class="c">AVC</th><th class="c">SAC</th></tr>
+            <tr><td class="c">0</td><td class="c">-</td><td class="c">100</td><td class="c">0</td><td class="c">100</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+            <tr><td class="c">1</td><td class="c">500</td><td class="c">100</td><td class="c">500</td><td class="c">600</td><td class="c">100</td><td class="c">500</td><td class="c">600</td></tr>
+            <tr><td class="c">2</td><td class="c">300</td><td class="c">100</td><td class="c">800</td><td class="c">900</td><td class="c">50</td><td class="c">400</td><td class="c">450</td></tr>
+            <tr><td class="c">3</td><td class="c">200</td><td class="c">100</td><td class="c">1000</td><td class="c">1100</td><td class="c">33.33</td><td class="c">333.33</td><td class="c">366.66</td></tr>
+            <tr><td class="c">4</td><td class="c">300</td><td class="c">100</td><td class="c">1300</td><td class="c">1400</td><td class="c">25</td><td class="c">325</td><td class="c">350</td></tr>
+            <tr><td class="c">5</td><td class="c">500</td><td class="c">100</td><td class="c">1800</td><td class="c">1900</td><td class="c">20</td><td class="c">360</td><td class="c">380</td></tr>
+            <tr><td class="c">6</td><td class="c">800</td><td class="c">100</td><td class="c">2600</td><td class="c">2700</td><td class="c">16.66</td><td class="c">433.33</td><td class="c">450</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Model P3-Q37 SMC schedule TFC 200 (textbook method) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>A firm's SMC schedule is given and TFC is ₹200. Find the TVC, TC, AVC and SAC schedules.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q37</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>Q</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td></tr>
+          <tr><th>SMC</th><td class="c">–</td><td class="c">600</td><td class="c">400</td><td class="c">300</td><td class="c">400</td><td class="c">600</td><td class="c">900</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>Formulas:</b></p>
+        <ul>
+          <li>TVC = Sum of SMCs up to that level of output</li>
+          <li>TC = TVC + TFC</li>
+          <li>AVC = TVC / Q</li>
+          <li>SAC = TC / Q</li>
+        </ul>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Q</th><th class="c">SMC</th><th class="c">TFC</th><th class="c">TVC</th><th class="c">TC = TVC + 200</th><th class="c">AVC = TVC / Q</th><th class="c">SAC = TC / Q</th></tr>
+            <tr><td class="c">0</td><td class="c">–</td><td class="c">200</td><td class="c">0</td><td class="c">200</td><td class="c">–</td><td class="c">–</td></tr>
+            <tr><td class="c">1</td><td class="c">600</td><td class="c">200</td><td class="c">600</td><td class="c">800</td><td class="c">600</td><td class="c">800</td></tr>
+            <tr><td class="c">2</td><td class="c">400</td><td class="c">200</td><td class="c">600 + 400 = 1000</td><td class="c">1200</td><td class="c">500</td><td class="c">600</td></tr>
+            <tr><td class="c">3</td><td class="c">300</td><td class="c">200</td><td class="c">1000 + 300 = 1300</td><td class="c">1500</td><td class="c">433.33</td><td class="c">500</td></tr>
+            <tr><td class="c">4</td><td class="c">400</td><td class="c">200</td><td class="c">1300 + 400 = 1700</td><td class="c">1900</td><td class="c">425</td><td class="c">475</td></tr>
+            <tr><td class="c">5</td><td class="c">600</td><td class="c">200</td><td class="c">1700 + 600 = 2300</td><td class="c">2500</td><td class="c">460</td><td class="c">500</td></tr>
+            <tr><td class="c">6</td><td class="c">900</td><td class="c">200</td><td class="c">2300 + 900 = 3200</td><td class="c">3400</td><td class="c">533.33</td><td class="c">566.67</td></tr>
+          </table>
+        </div>
+        <p>At zero output, TVC is zero, TC equals the fixed cost (₹200), and AVC and SAC are undefined.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION G: 5 MARKS ================= -->
+  <section id="five">
+    <h2>G. Assignment and Project Oriented Questions (5 marks)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Find the missing products in the following table.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VIII.1</span><span class="tag tn">Teacher's Notes · III.2</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th class="c">Factor (L)</th><th class="c">TP<sub>L</sub></th><th class="c">MP<sub>L</sub></th><th class="c">AP<sub>L</sub></th></tr>
+          <tr><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+          <tr><td class="c">1</td><td class="c">10</td><td class="c">-</td><td class="c">10</td></tr>
+          <tr><td class="c">2</td><td class="c">22</td><td class="c">-</td><td class="c">-</td></tr>
+          <tr><td class="c">3</td><td class="c">-</td><td class="c">14</td><td class="c">12</td></tr>
+          <tr><td class="c">4</td><td class="c">-</td><td class="c">08</td><td class="c">11</td></tr>
+          <tr><td class="c">5</td><td class="c">50</td><td class="c">06</td><td class="c">10</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Factor 1</th><th class="c">TP</th><th class="c">MP<sub>1</sub></th><th class="c">AP<sub>1</sub></th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+            <tr><td class="c">1</td><td class="c">10</td><td class="c">10</td><td class="c">10</td></tr>
+            <tr><td class="c">2</td><td class="c">22</td><td class="c"><b>12</b></td><td class="c"><b>11</b></td></tr>
+            <tr><td class="c">3</td><td class="c"><b>36</b></td><td class="c"><b>14</b></td><td class="c">12</td></tr>
+            <tr><td class="c">4</td><td class="c"><b>44</b></td><td class="c">08</td><td class="c">11</td></tr>
+            <tr><td class="c">5</td><td class="c">50</td><td class="c">06</td><td class="c">10</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Explain the meaning of TP, MP and AP. (For Blind students only)</p>
+      <div class="tags"><span class="tag qb">Question Bank · VIII (Blind students)</span><span class="tag tn">Teacher's Notes · III.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>Total Product (TP):</b> Suppose we vary a single input and keep all other inputs constant. Then for different levels of that input, we get different levels of output. This relationship between the variable input and output, keeping all other inputs constant, is referred to as Total Product (TP) of the variable input. It is also called total return or total physical product of the variable input.</p>
+        <p><b>Average Product (AP):</b> Average product is defined as the output per unit of variable input.<br><span class="formula">AP<sub>L</sub> = <span class="frac"><span>TP<sub>L</sub></span><span>L</span></span></span></p>
+        <p><b>Marginal Product (MP):</b> Marginal product of an input is defined as the change in output per unit of change in the input when all other inputs are held constant.<br><span class="formula">MP<sub>L</sub> = <span class="frac"><span>ΔTP<sub>L</sub></span><span>ΔL</span></span></span></p>
+        <p>Total product is the sum of marginal products, and average product at any level of employment is the average of all marginal products up to that level.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Micro Chapter 3 · Production and Costs</footer>
+</div>
+
+</body>
+</html>
