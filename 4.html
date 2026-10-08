@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microeconomics – Chapter 4: The Theory of the Firm under Perfect Competition</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+    background: #f3f5f9;
+    color: #222;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  /* ---------- Chapter tabs ---------- */
+  .tabs {
+    position: sticky; top: 0; z-index: 10;
+    background: #1f3c88;
+    display: flex; overflow-x: auto; white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  }
+  .tabs a {
+    color: #dfe6ff; text-decoration: none;
+    padding: 14px 16px; font-weight: 600; font-size: 15px;
+    flex-shrink: 0; border-bottom: 3px solid transparent;
+  }
+  .tabs a.active { color: #fff; border-bottom-color: #ffcc33; background: rgba(255,255,255,.08); }
+  /* ---------- Layout ---------- */
+  .wrap { max-width: 860px; margin: 0 auto; padding: 16px 14px 60px; }
+  header h1 { font-size: 1.45rem; margin: 6px 0 2px; color: #1f3c88; }
+  header p { margin: 0 0 12px; color: #555; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 18px; }
+  .jump a {
+    background: #fff; border: 1px solid #c9d3ea; color: #1f3c88;
+    padding: 6px 12px; border-radius: 20px; text-decoration: none; font-size: 14px;
+  }
+  section { margin-top: 26px; }
+  section > h2 {
+    font-size: 1.15rem; background: #1f3c88; color: #fff;
+    padding: 10px 14px; border-radius: 8px; margin: 0 0 12px;
+  }
+  .q {
+    background: #fff; border-radius: 10px; padding: 14px;
+    margin-bottom: 14px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  }
+  .q.cv { background: #fffcf3; }   /* slight tint for converted questions */
+  .qtext { font-weight: 600; margin: 0 0 8px; }
+  .qnum { color: #1f3c88; margin-right: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+  .tag { font-size: 12px; padding: 3px 9px; border-radius: 12px; font-weight: 600; }
+  .tag.mq { background: #e3ecff; color: #1f3c88; }
+  .tag.qb { background: #e2f5e9; color: #1b6b3a; }
+  .tag.tn { background: #fff0dc; color: #9a5300; }
+  .opts { list-style: none; padding: 0; margin: 0 0 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+  .opts li { background: #f4f6fb; padding: 6px 10px; border-radius: 6px; font-size: 15px; }
+  .opts li.right { background: #d9f2e1; font-weight: 700; color: #1b6b3a; }
+  .ans {
+    border-left: 4px solid #2e9e5b; background: #f6fbf8;
+    padding: 10px 12px; border-radius: 0 8px 8px 0;
+  }
+  .ans .lbl { font-size: 12px; font-weight: 700; color: #2e9e5b; text-transform: uppercase; letter-spacing: .5px; display: block; margin-bottom: 4px; }
+  .ans p { margin: 6px 0; }
+  .ans ul, .ans ol { margin: 6px 0; padding-left: 22px; }
+  .table-wrap { overflow-x: auto; margin: 10px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; background: #fff; }
+  th, td { border: 1px solid #c9d3ea; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #eef2fb; }
+  td.c, th.c { text-align: center; }
+  .two-col { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 10px 0; }
+  @media (min-width: 640px) { .two-col { grid-template-columns: 1fr 1fr; } }
+  .three-col { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 10px 0; }
+  @media (min-width: 640px) { .three-col { grid-template-columns: 1fr 1fr 1fr; } }
+  .box { border: 1px solid #c9d3ea; border-radius: 8px; padding: 10px; background: #fff; }
+  .box h4 { margin: 0 0 6px; font-size: 15px; text-align: center; }
+  .cap { font-size: 13px; color: #555; margin: 6px 0 0; text-align: center; }
+  svg { width: 100%; height: auto; display: block; }
+  .formula {
+    display: inline-block; background: #eef2fb; color: #1f3c88; font-weight: 700;
+    padding: 4px 10px; border-radius: 6px; margin: 4px 0;
+  }
+  .frac { display: inline-flex; flex-direction: column; vertical-align: middle; text-align: center; margin: 0 4px; }
+  .frac span:first-child { border-bottom: 2px solid #1f3c88; padding: 0 4px; }
+  .indent { padding-left: 18px; }
+  footer { text-align: center; color: #777; font-size: 13px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<!-- ===== Chapter Tabs ===== -->
+<nav class="tabs">
+  <a href="index.html">Chapter 1</a>
+  <a href="2.html">Chapter 2</a>
+  <a href="3.html">Chapter 3</a>
+  <a href="4.html" class="active">Chapter 4</a>
+  <a href="5.html">Chapter 5</a>
+  <a href="6.html">Chapter 1 (macro)</a>
+</nav>
+
+<div class="wrap">
+  <header>
+    <h1>Micro Chapter 4: The Theory of the Firm under Perfect Competition</h1>
+    <p>Introductory Microeconomics</p>
+    <div class="legend">
+      <span class="tag mq">Model Question</span>
+      <span class="tag qb">Question Bank</span>
+      <span class="tag tn">Teacher's Notes</span>
+    </div>
+  </header>
+
+  <div class="jump">
+    <a href="#mcq">Choose the answer</a>
+    <a href="#fib">Fill in the blanks</a>
+    <a href="#one">One word / sentence</a>
+    <a href="#two">2 Marks</a>
+    <a href="#four">4 Marks</a>
+    <a href="#six">6 Marks</a>
+    <a href="#five">5 Marks</a>
+  </div>
+
+  <!-- ================= SECTION A: MCQ ================= -->
+  <section id="mcq">
+    <h2>A. Choose the correct answer (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>The products in a Perfectly competitive market are</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q2</span><span class="tag qb">Question Bank · I.1</span></div>
+      <ul class="opts">
+        <li>a) Heterogeneous products</li>
+        <li class="right">b) Homogeneous products</li>
+        <li>c) Luxury goods</li>
+        <li>d) Necessary goods</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>b) Homogeneous products</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>The increase in Total revenue for a unit increase in the output is</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.2</span></div>
+      <ul class="opts">
+        <li class="right">a) Marginal Revenue</li>
+        <li>b) Average Revenue</li>
+        <li>c) Total Revenue</li>
+        <li>d) Fixed Revenue</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>a) Marginal Revenue</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>A book seller sells 30 books at the price of Rs 10 each. The Total Revenue of the seller is</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.3</span></div>
+      <ul class="opts">
+        <li>a) Rs. 100</li>
+        <li>b) Rs. 200</li>
+        <li class="right">c) Rs. 300</li>
+        <li>d) Rs. 400</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>c) Rs. 300 &nbsp;(TR = p × q = 10 × 30 = Rs 300)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>A book seller sells 40 books at ₹20 each. Total Revenue is</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>₹800 &nbsp;(TR = p × q = 20 × 40 = ₹800)</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>A firm's profit is denoted by</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q2</span><span class="tag qb">Question Bank · I.4</span></div>
+      <ul class="opts">
+        <li>a) ∑</li>
+        <li>b) Δ</li>
+        <li>c) ∅</li>
+        <li class="right">d) π</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>d) π</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>When the supply curve is vertical, the elasticity of supply is as follows</p>
+      <div class="tags"><span class="tag qb">Question Bank · I.5</span></div>
+      <ul class="opts">
+        <li>a) e<sub>s</sub> = 1</li>
+        <li>b) e<sub>s</sub> &gt; 1</li>
+        <li class="right">c) e<sub>s</sub> = 0</li>
+        <li>d) e<sub>s</sub> = ∞</li>
+      </ul>
+      <div class="ans"><span class="lbl">Answer</span>c) e<sub>s</sub> = 0</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>When more firms enter and supply increases, the supply curve</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Shifts towards the right. (If the number of firms in the market increases, the market supply curve shifts to the right.)</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION B: FILL IN THE BLANKS ================= -->
+  <section id="fib">
+    <h2>B. Fill in the blanks (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Price taking behaviour is the distinguishing characteristic of ________ market.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q7</span><span class="tag qb">Question Bank · II.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Perfectly competitive</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>For a price taking firm marginal revenue is equal to ________.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Market price</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>The minimum point of AVC where the SMC curve cuts the AVC curve is called ________.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Short run shut down point</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>________ cost of some activity is the gain foregone from the second best activity.</p>
+      <div class="tags"><span class="tag qb">Question Bank · II.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Opportunity</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>________ tax is a tax that the Government imposes per unit sale of output.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q7</span><span class="tag qb">Question Bank · II.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Unit</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION C: ONE WORD / SENTENCE ================= -->
+  <section id="one">
+    <h2>C. Answer in a word / sentence (1 mark each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Write the formula to calculate Average Revenue.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q14</span><span class="tag qb">Question Bank · IV.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span><span class="formula">AR = <span class="frac"><span>TR</span><span>q</span></span> = <span class="frac"><span>p × q</span><span>q</span></span> = p</span></div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Define Marginal Revenue.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q14</span><span class="tag qb">Question Bank · IV.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The marginal revenue (MR) of a firm is defined as the increase in total revenue for a unit increase in the firm's output.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>What is Supply?</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q13</span><span class="tag qb">Question Bank · IV.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>A firm's 'supply' is the quantity that it chooses to sell at a given price, given technology, and given the prices of factors of production.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>What is Normal profit?</p>
+      <div class="tags"><span class="tag qb">Question Bank · IV.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>The minimum level of profit that is needed to keep a firm in the existing business is defined as normal profit.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Give the meaning of Super Normal profit.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q13</span><span class="tag qb">Question Bank · IV.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Profit that a firm earns over and above the normal profit is called the super-normal profit.</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>To which side does a supply curve shift due to the technological progress?</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q13</span><span class="tag qb">Question Bank · IV.6</span></div>
+      <div class="ans"><span class="lbl">Answer</span>To the right (rightward shift).</div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>How does a firm earn revenue?</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q13</span></div>
+      <div class="ans"><span class="lbl">Answer</span>A firm earns revenue by selling the good that it produces in the market.</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">8.</span>Write the formula of MR.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-11c</span><span class="tag qb">Question Bank · III.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>MR = ΔTR / ΔQ</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">9.</span>Write the formula of profit (π).</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-11b</span><span class="tag qb">Question Bank · III.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>π = TR – TC</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">10.</span>Write the formula of AR.</p>
+      <div class="tags"><span class="tag qb">Question Bank · III.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>AR = TR / Q</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">11.</span>What profit does a firm earn over and above its total cost when it earns only normal profit?</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-11b</span><span class="tag qb">Question Bank · III.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Zero profit</div>
+    </div>
+
+    <div class="q cv">
+      <p class="qtext"><span class="qnum">12.</span>Under perfect competition, what kind of information do buyers and sellers have?</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-11c</span><span class="tag qb">Question Bank · III.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>Perfect information</div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION D: 2 MARKS ================= -->
+  <section id="two">
+    <h2>D. Answer in about 4 sentences (2 marks each)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>State the conditions needed for profit maximization by a firm under Perfect competition.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q20</span><span class="tag qb">Question Bank · V.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>For profits to be maximum, three conditions must hold at the output level q<sub>0</sub>:</p>
+        <ol>
+          <li>The price, p, must equal MC.</li>
+          <li>Marginal cost must be non-decreasing at q<sub>0</sub>.</li>
+          <li>For the firm to continue to produce, in the short run, price must be greater than or equal to the average variable cost (p ≥ AVC); in the long run, price must be greater than or equal to the average cost (p ≥ AC).</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Give the meaning of Shut down point.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q20</span><span class="tag qb">Question Bank · V.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>In the short run the firm continues to produce as long as the price remains greater than or equal to the minimum of AVC. Along the supply curve, as we move down, the last price-output combination at which the firm produces positive output is the point of minimum AVC where the SMC curve cuts the AVC curve. Below this, there will be no production. This point is called the <b>short run shut down point</b> of the firm.</p>
+        <p>In the long run, the shut down point is the minimum of the LRAC curve.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>Write the meaning of Opportunity cost with example.</p>
+      <div class="tags"><span class="tag qb">Question Bank · V.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Opportunity cost of some activity is the gain foregone from the second best activity.</p>
+        <p><b>Example:</b> Suppose you have Rs 1,000 which you decide to invest in your family business. If you do not invest this money, you can either keep it in the house-safe which gives zero return, or deposit it in bank-1 or bank-2, which give interest at 10 per cent and 5 per cent respectively. The maximum benefit from the other alternatives is the interest from bank-1. So, the opportunity cost of investing the money in your family business is the amount of forgone interest from bank-1.</p>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Mention the two determinants of a firm's Supply curve.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q20</span><span class="tag mq">Model Question · P5-Q20</span><span class="tag qb">Question Bank · V.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>A firm's supply curve is a part of its marginal cost curve, so any factor that affects the marginal cost curve is a determinant of its supply curve. The two determinants are:</p>
+        <ol>
+          <li><b>Technological progress:</b> It lowers the firm's marginal cost and shifts the supply curve to the right. At any given market price, the firm supplies more output.</li>
+          <li><b>Input prices:</b> An increase in the price of an input raises the marginal cost and shifts the supply curve to the left. At any given market price, the firm supplies less output.</li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Find out the Market supply when the supply curves of two producers are S<sub>1</sub>(p) = p – 20 and S<sub>2</sub>(p) = p – 10 respectively.</p>
+      <div class="tags"><span class="tag qb">Question Bank · V.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The market supply is the summation of the supplies of the individual firms: S<sub>m</sub>(p) = S<sub>1</sub>(p) + S<sub>2</sub>(p)</p>
+        <p>Firm 1 produces (p – 20) when p ≥ 20 and 0 when p &lt; 20. Firm 2 produces (p – 10) when p ≥ 10 and 0 when p &lt; 10.</p>
+        <p>So, the market supply is:</p>
+        <ul>
+          <li>S<sub>m</sub>(p) = 0 &nbsp;&nbsp;when p &lt; 10</li>
+          <li>S<sub>m</sub>(p) = p – 10 &nbsp;&nbsp;when p ≥ 10 and p &lt; 20</li>
+          <li>S<sub>m</sub>(p) = (p – 20) + (p – 10) = <b>2p – 30</b> &nbsp;&nbsp;when p ≥ 20</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>Find market supply when S<sub>1</sub>(p) = p – 15 and S<sub>2</sub>(p) = p – 20.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q21</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The market supply is the summation of the supplies of the individual firms: S<sub>m</sub>(p) = S<sub>1</sub>(p) + S<sub>2</sub>(p)</p>
+        <p>Firm 1 produces (p – 15) when p ≥ 15 and 0 when p &lt; 15. Firm 2 produces (p – 20) when p ≥ 20 and 0 when p &lt; 20.</p>
+        <p>So, the market supply is:</p>
+        <ul>
+          <li>S<sub>m</sub>(p) = 0 &nbsp;&nbsp;when p &lt; 15</li>
+          <li>S<sub>m</sub>(p) = p – 15 &nbsp;&nbsp;when p ≥ 15 and p &lt; 20</li>
+          <li>S<sub>m</sub>(p) = (p – 15) + (p – 20) = <b>2p – 35</b> &nbsp;&nbsp;when p ≥ 20</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>Find market supply when S<sub>1</sub>(p) = p – 10 and S<sub>2</sub>(p) = p – 15.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q20</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The market supply is the summation of the supplies of the individual firms: S<sub>m</sub>(p) = S<sub>1</sub>(p) + S<sub>2</sub>(p)</p>
+        <p>Firm 1 produces (p – 10) when p ≥ 10 and 0 when p &lt; 10. Firm 2 produces (p – 15) when p ≥ 15 and 0 when p &lt; 15.</p>
+        <p>So, the market supply is:</p>
+        <ul>
+          <li>S<sub>m</sub>(p) = 0 &nbsp;&nbsp;when p &lt; 10</li>
+          <li>S<sub>m</sub>(p) = p – 10 &nbsp;&nbsp;when p ≥ 10 and p &lt; 15</li>
+          <li>S<sub>m</sub>(p) = (p – 10) + (p – 15) = <b>2p – 25</b> &nbsp;&nbsp;when p ≥ 15</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">8.</span>Find market supply when S<sub>1</sub>(p) = p – 20 and S<sub>2</sub>(p) = p – 25.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q21</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The market supply is the summation of the supplies of the individual firms: S<sub>m</sub>(p) = S<sub>1</sub>(p) + S<sub>2</sub>(p)</p>
+        <p>Firm 1 produces (p – 20) when p ≥ 20 and 0 when p &lt; 20. Firm 2 produces (p – 25) when p ≥ 25 and 0 when p &lt; 25.</p>
+        <p>So, the market supply is:</p>
+        <ul>
+          <li>S<sub>m</sub>(p) = 0 &nbsp;&nbsp;when p &lt; 20</li>
+          <li>S<sub>m</sub>(p) = p – 20 &nbsp;&nbsp;when p ≥ 20 and p &lt; 25</li>
+          <li>S<sub>m</sub>(p) = (p – 20) + (p – 25) = <b>2p – 45</b> &nbsp;&nbsp;when p ≥ 25</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">9.</span>Give the meaning of Price elasticity of supply and write its formula.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q21</span><span class="tag mq">Model Question · P4-Q21</span><span class="tag qb">Question Bank · V.6</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The price elasticity of supply of a good measures the responsiveness of quantity supplied to changes in the price of the good.</p>
+        <p><span class="formula">e<sub>S</sub> = <span class="frac"><span>Percentage change in quantity supplied</span><span>Percentage change in price</span></span></span></p>
+        <p><span class="formula">e<sub>S</sub> = <span class="frac"><span>ΔQ</span><span>Q</span></span> × <span class="frac"><span>P</span><span>ΔP</span></span></span></p>
+        <p>where ΔQ is the change in quantity supplied as market price changes by ΔP.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION E: 4 MARKS ================= -->
+  <section id="four">
+    <h2>E. Answer in about 12 sentences (4 marks each)</h2>
+
+    <!-- VI.1 Features (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Explain the features of Perfect competition.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.1</span><span class="tag tn">Teacher's Notes · I.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>A. <b>Large number of buyers and sellers</b>: - There will be large number of buyers and sellers of a product in a perfect competitive market.</p>
+        <p>B. <b>Homogeneous products:</b> - The firms in a perfect competition will produce only identical or homogeneous products.</p>
+        <p>C. <b>Single price:</b> -Since there is large number of sellers in perfect competition, there will be single price. And no single seller or firm can change the price of a product by changing its output.</p>
+        <p>D. <b>Freedom of entry and exit</b>: -In a perfect competition, there is freedom of entry and exit. This means, any new firms is free to enter the industry and any existing firm is free to leave the industry.</p>
+        <p>E. <b>Price taker</b>: -Each firm in a perfect competition is "Price takers". This means no single firm is influence the price level by changing its output. So, each firm has zero market power.</p>
+        <p>F. Absence of transport cost: -For the existence of perfect competition the transport costs should not be considered. All the firms have equal access to the market. Price of the product is not affected by the cost of transportation of goods.</p>
+        <p>G. <b>Free mobility of factors of production:</b> - Another feature of the perfect competition is the goods and services as well as resources are perfectly mobile between firms. Factors of production can freely move from one occupation to another and from one firm to another. There is no barrier on their movement.</p>
+        <p>H. <b>Absence of selling cost:</b> -Under perfect competition there is no need of selling cost. Selling costs are the expenditure incurred to increase the sale of product. You know that under perfect competition goods are completely homogeneous. When they cannot change the price and when their goods are completely similar, firms need not make any expenditure and publicity and advertisement.</p>
+        <p>I. <b>Normal profit:</b> - The firm is a perfect competition will be earning normal profit. The normal profit is that just sufficient to stay in the market.</p>
+        <p>J. <b>Perfect market information</b>: - All the buyers and sellers in a perfect competition have perfect market information.</p>
+        <p>So, these are the main features of the perfect competitive market, but it is clear from the above features that in perfect competitive market individual firms have zero market power and this form of markets exists really.</p>
+      </div>
+    </div>
+
+    <!-- VI.2 Third condition (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Write about the third condition of profit maximization of the firm under perfect competition with the help of diagrams.</p>
+      <div class="tags"><span class="tag mq">Model Question · P5-Q29</span><span class="tag qb">Question Bank · VI.2</span><span class="tag tn">Teacher's Notes · I.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Notice that the third condition has two parts: one part applies in the short run while the other applies in the long run.</p>
+
+        <p><b>Case 1 &nbsp;<i>Price must be greater than or equal to AVC in the</i> short run</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Price below AVC in the short run">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M90,90 Q220,290 360,110" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="212" x2="370" y2="212" stroke="#222" stroke-width="2"/>
+              <g stroke="#666" stroke-width="1.2">
+                <line x1="50" y1="193" x2="208" y2="193"/>
+                <line x1="208" y1="193" x2="208" y2="250"/>
+              </g>
+              <g font-size="13" font-weight="bold">
+                <text x="213" y="227">A</text>
+                <text x="210" y="186">B</text>
+              </g>
+              <g font-size="13">
+                <text x="44" y="216" text-anchor="end">p</text>
+                <text x="44" y="197" text-anchor="end">E</text>
+                <text x="208" y="266" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              </g>
+              <text x="304" y="38" font-size="13" fill="#1f3c88" font-weight="bold">SMC</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">SAC</text>
+              <text x="364" y="114" font-size="13" fill="#1f3c88" font-weight="bold">AVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>The figure is used to demonstrate that a profit-maximizing firm produces zero output in the short run when the market price, p, is less than the minimum of its average variable cost (AVC).</p>
+            <p>If the firm's output level is q1, the firm's total variable cost exceeds its revenue by an amount equal to the area of rectangle PEBA.</p>
+            <p style="margin-bottom:0;">Observe that at the output level q1, the market price p is lower than the AVC. We claim that q1 cannot be a profit-maximizing output level.</p>
+          </div>
+        </div>
+
+        <p><b>Case 2: Price must be greater than or equal to AC in the long run.</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Price below LRAC in the long run">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="185" x2="370" y2="185" stroke="#222" stroke-width="2"/>
+              <g stroke="#666" stroke-width="1.2">
+                <line x1="50" y1="161.7" x2="239.4" y2="161.7" stroke-dasharray="3 3"/>
+                <line x1="239.4" y1="161.7" x2="239.4" y2="250"/>
+              </g>
+              <g font-size="13" font-weight="bold">
+                <text x="245" y="201">A</text>
+                <text x="232" y="155" text-anchor="end">B</text>
+              </g>
+              <g font-size="13">
+                <text x="44" y="189" text-anchor="end">p</text>
+                <text x="44" y="166" text-anchor="end">E</text>
+                <text x="239" y="266" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              </g>
+              <text x="304" y="38" font-size="13" fill="#1f3c88" font-weight="bold">LRMC</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">LRAC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p style="margin:0;">We will show that the statement of Case 2 (see above) is true by arguing that a profit-maximising firm, in the long run, will not produce at an output level. Wherein the market price is lower than the AC. In the above diagram we observe that at the output level q1,the market price p is lower than the (long run) AC. We claim that q1 cannot be a profit-maximising output level.</p>
+          </div>
+        </div>
+
+        <p><b>The Profit Maximisation</b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Profit maximisation in the short run">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M90,90 Q220,290 360,110" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="100" x2="370" y2="100" stroke="#222" stroke-width="2"/>
+              <line x1="50" y1="159.2" x2="280.6" y2="159.2" stroke="#666" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <line x1="280.6" y1="100" x2="280.6" y2="250" stroke="#666" stroke-width="1.2"/>
+              <g font-size="13" font-weight="bold">
+                <text x="272" y="94" text-anchor="end">A</text>
+                <text x="286" y="154">B</text>
+              </g>
+              <g font-size="13">
+                <text x="44" y="104" text-anchor="end">p</text>
+                <text x="44" y="163" text-anchor="end">E</text>
+                <text x="280.6" y="266" text-anchor="middle">q<tspan font-size="10" dy="3">0</tspan></text>
+              </g>
+              <text x="304" y="38" font-size="13" fill="#1f3c88" font-weight="bold">SMC</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">SAC</text>
+              <text x="364" y="124" font-size="13" fill="#1f3c88" font-weight="bold">AVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <p style="margin:0;">In the above diagram given market price p, the output level of a profit-maximising firm is q0. At q0, the firm's profit is equal to the area of rectangle EPAB. At q0,observe that SMC slopes upwards and p exceeds AVC. Since the three conditions discussed at q0, we maintain that the profit-maximising output level of the firm is q0.What happens at q0? The total revenue of the firm at q0 is the area rectangle OpAq0 (the product of price and quantity) while the total cost at q0 is the area of rectangle OEBq0 (the product of short run average cost and quantity).So, at q0, the firm earns a profit equal to the area of the rectangle EPAB.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.3 Profit table (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>The following table shows the total revenue and total cost schedules of a competitive firm. Calculate the profit at each output level and determine the market price of the good.</p>
+      <div class="tags"><span class="tag mq">Model Question · P4-Q29</span><span class="tag qb">Question Bank · VI.3</span><span class="tag tn">Teacher's Notes · I.4</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th class="c">Quantity sold (q)</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td><td class="c">6</td><td class="c">7</td></tr>
+          <tr><th class="c">TR (Rs.)</th><td class="c">0</td><td class="c">5</td><td class="c">10</td><td class="c">15</td><td class="c">20</td><td class="c">25</td><td class="c">30</td><td class="c">35</td></tr>
+          <tr><th class="c">TC (Rs.)</th><td class="c">5</td><td class="c">7</td><td class="c">10</td><td class="c">12</td><td class="c">15</td><td class="c">23</td><td class="c">33</td><td class="c">40</td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c">Quantity sold(q)</th><th class="c">TR(Rs.)</th><th class="c">TC(Rs.)</th><th class="c">Profit<br>TR-TC</th><th class="c">Market Price</th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">5</td><td class="c">-5</td><td class="c">-</td></tr>
+            <tr><td class="c">1</td><td class="c">5</td><td class="c">7</td><td class="c">-2</td><td class="c">5</td></tr>
+            <tr><td class="c">2</td><td class="c">10</td><td class="c">10</td><td class="c">0</td><td class="c">5</td></tr>
+            <tr><td class="c">3</td><td class="c">15</td><td class="c">12</td><td class="c">3</td><td class="c">5</td></tr>
+            <tr><td class="c">4</td><td class="c">20</td><td class="c">15</td><td class="c">5</td><td class="c">5</td></tr>
+            <tr><td class="c">5</td><td class="c">25</td><td class="c">23</td><td class="c">2</td><td class="c">5</td></tr>
+            <tr><td class="c">6</td><td class="c">30</td><td class="c">33</td><td class="c">-3</td><td class="c">5</td></tr>
+            <tr><td class="c">7</td><td class="c">35</td><td class="c">40</td><td class="c">-5</td><td class="c">5</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- VI.4 Shut down etc (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Write about Shut down point, Normal profit and Break-even point.</p>
+      <div class="tags"><span class="tag mq">Model Question · P3-Q29</span><span class="tag qb">Question Bank · VI.4</span><span class="tag tn">Teacher's Notes · I.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>Shut down point:</b> - It refers to the point where Short run marginal cost curve cuts the average variable cost curve at its minimum is called the short run shut down point of the firm.</p>
+        <p><b>Normal profit:</b> -It refers to the profit level that is just enough to cover the explicit costs and opportunity costs. Normal profit is a situation of zero profit.</p>
+        <p><b>Break-even point:</b> -It refers to the point where the firm earns normal profit.</p>
+      </div>
+    </div>
+
+    <!-- VI.5 Determinants (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Explain the determinants of a firm's supply curve.</p>
+      <div class="tags"><span class="tag mq">Model Question · P1-Q29</span><span class="tag qb">Question Bank · VI.5</span><span class="tag tn">Teacher's Notes · I.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>A. <b>Technological progress: -</b> Improvement in technology may reduce the total cost and the marginal cost of the product. Which leads to increase in quantity of production and supply may increase. Using outdated technology may result in less supply.</p>
+        <p>B. <b>Input prices</b>: -If the price of an input, say wage rate of labor increases, the marginal cost and total cost may also increase resulting in upward shift of the supply curve. Decreasing price of inputs leads to increase in supply.</p>
+        <p>C. <b>Tax policy of the government</b>: -If government increases taxes the marginal cost of the production increases and the supply curve moves upwards to the left and the firm supplies fewer units of output. If the governments reduce the tax supply is going to be increases.</p>
+        <p>D. <b>Goal of the firm: -</b> If a firm's goal is profit maximization, then the firm may supply more and tries to maximize profit. On the other hand, if the firm's goal is risk minimization it may produce less and supply less.</p>
+        <p>E. <b>Nature of the market</b>: -In monopoly, a monopolist may restrict supply to raise the price and earn more profit. In perfect competitive market, there will be no tendency to restrict supply. As the number of firms increases supply also increases.</p>
+        <p>F. <b>Expectation about the future prices: -</b> If a producer expects an increase in market price in future, he will supply less today and hoard the stock to sell at a higher price in future and vice versa.</p>
+        <p>G. <b>Climatic conditions</b>: - favorable climatic conditions may increase agricultural production and supply may also increase. On the other hand, unfavorable climatic conditions reduce the supply of agricultural commodities and its allied goods.</p>
+        <p>H. <b>Prices of the products</b>: - If the final goods price increases the supply is also going to be increase to earn more profit and vice versa.</p>
+      </div>
+    </div>
+
+    <!-- VI.6 Elasticity 200 balls (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">6.</span>Assume that 200 balls are produced by the firm at the market price Rs.10 for each ball. When the price of ball rises to Rs.30, firm produces 1000 balls. Find the Price elasticity of supply?</p>
+      <div class="tags"><span class="tag qb">Question Bank · VI.6</span><span class="tag tn">Teacher's Notes · I.4 (2nd)</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The percentage change in quantity of the good supplied and market price can be estimated using the information summarized in the table below:</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Price of the ball (P)</th><th>Quantity of balls produced and sold (Q)</th></tr>
+            <tr><td>Old price : P<sub>1</sub>=10</td><td>Old Quantity : Q<sub>1</sub>=200</td></tr>
+            <tr><td>New price : P<sub>2</sub> = 30</td><td>New Quantity: Q<sub>2</sub>=1000</td></tr>
+          </table>
+        </div>
+        <p>Percentage change in quantity supplied = <span class="frac"><span>ΔQ</span><span>Q<sub>1</sub></span></span>X100</p>
+        <p class="indent">= <span class="frac"><span>Q<sub>2</sub> - Q<sub>1</sub></span><span>Q<sub>1</sub></span></span> X 100<br>
+        = <span class="frac"><span>1000-200</span><span>200</span></span> X 100<br>
+        =400</p>
+        <p>Percentage change in market price = <span class="frac"><span>ΔP</span><span>P<sub>1</sub></span></span>X100</p>
+        <p class="indent">= <span class="frac"><span>P<sub>2</sub> - P<sub>1</sub></span><span>P<sub>1</sub></span></span> X 100<br>
+        = <span class="frac"><span>30-10</span><span>10</span></span> X 100<br>
+        = 200</p>
+        <p>Therefore e<sub>s</sub> = <span class="frac"><span>400</span><span>200</span></span> = 2</p>
+      </div>
+    </div>
+
+    <!-- Model P2-Q29 Elasticity 100 balls (textbook method) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">7.</span>A firm produces 100 balls at ₹5 each. When the price rises to ₹15, it produces 1000 balls. Find the price elasticity of supply.</p>
+      <div class="tags"><span class="tag mq">Model Question · P2-Q29</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th>Price of balls (P)</th><th>Quantity of balls produced (Q)</th></tr>
+            <tr><td>Old price: P<sub>1</sub> = 5</td><td>Old quantity: Q<sub>1</sub> = 100</td></tr>
+            <tr><td>New price: P<sub>2</sub> = 15</td><td>New quantity: Q<sub>2</sub> = 1000</td></tr>
+          </table>
+        </div>
+        <p><b>Percentage change in quantity supplied</b> = <span class="frac"><span>Q<sub>2</sub> – Q<sub>1</sub></span><span>Q<sub>1</sub></span></span> × 100 = <span class="frac"><span>1000 – 100</span><span>100</span></span> × 100 = <b>900</b></p>
+        <p><b>Percentage change in market price</b> = <span class="frac"><span>P<sub>2</sub> – P<sub>1</sub></span><span>P<sub>1</sub></span></span> × 100 = <span class="frac"><span>15 – 5</span><span>5</span></span> × 100 = <b>200</b></p>
+        <p><b>Price elasticity of supply</b>, e<sub>S</sub> = <span class="frac"><span>Percentage change in quantity supplied</span><span>Percentage change in price</span></span> = <span class="frac"><span>900</span><span>200</span></span> = <b>4.5</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION F: 6 MARKS ================= -->
+  <section id="six">
+    <h2>F. Answer in about 20 sentences (6 marks each)</h2>
+
+    <!-- VII.1 TR AR (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>Write about Total revenue and Average revenue of a firm under Perfect competition with diagrams.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.1</span><span class="tag tn">Teacher's Notes · II.3</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Average revenue is the amount of revenue per unit sold.</p>
+        <p>The formula for calculating the average revenue is, &nbsp;<span class="formula">AR = <span class="frac"><span>TR</span><span>Q</span></span></span></p>
+        <p class="indent">Where AR = average revenue &nbsp; TR = total revenue &nbsp; Q = quantity</p>
+
+        <div class="two-col">
+          <div class="box">
+            <h4>AVERAGE REVENUE CURVE</h4>
+            <svg viewBox="0 0 400 295" role="img" aria-label="Horizontal price line">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="16" font-size="14" fill="#1f3c88" font-weight="bold">Price</text>
+              <text x="380" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <line x1="50" y1="140" x2="360" y2="140" stroke="#1f6fd1" stroke-width="3"/>
+              <text x="44" y="144" font-size="13" text-anchor="end">p</text>
+              <text x="360" y="130" font-size="13" fill="#1f3c88" font-weight="bold" text-anchor="end">Price Line</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>The diagram shows that the market price, <i>p</i>, is independent of a firm's output. This means that a firm can sell as many units of the good as it wants to sell at price <i>p</i>.</p>
+            <p style="margin-bottom:0;">For a price-taking firm, average revenue equals the market price.</p>
+          </div>
+        </div>
+
+        <p>Total revenue is the total amount received by the seller (firm) from the sale of a given amount of the product. The formula for calculating the total revenue is &nbsp;<b>TR=PXQ</b></p>
+        <p class="indent">Where TR= total revenue &nbsp; P = price &nbsp; Q = quantity.</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th rowspan="2">TR Schedule</th><th>Boxes sold</th><td class="c">0</td><td class="c">1</td><td class="c">2</td><td class="c">3</td><td class="c">4</td><td class="c">5</td></tr>
+            <tr><th>TR (In Rs.)</th><td class="c">0</td><td class="c">10</td><td class="c">20</td><td class="c">30</td><td class="c">40</td><td class="c">50</td></tr>
+          </table>
+        </div>
+
+        <div class="two-col">
+          <div class="box">
+            <h4>TOTAL REVENUE CURVE</h4>
+            <svg viewBox="0 0 400 295" role="img" aria-label="Total revenue curve">
+              <line x1="50" y1="20" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="16" font-size="14" fill="#1f3c88" font-weight="bold">Revenue</text>
+              <text x="380" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <line x1="50" y1="250" x2="360" y2="50" stroke="#1f6fd1" stroke-width="3"/>
+              <line x1="180" y1="166.1" x2="180" y2="250" stroke="#888" stroke-dasharray="4 3"/>
+              <text x="172" y="160" font-size="13" font-weight="bold" text-anchor="end">A</text>
+              <text x="180" y="266" font-size="13" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              <text x="364" y="52" font-size="13" fill="#1f3c88" font-weight="bold">TR</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>It shows the total revenue curve of a firm. Three observations are relevant here.</p>
+            <ol style="margin-bottom:0;">
+              <li>When the output is zero, the total revenue of the firm is also zero. The TR curve passes through point O.</li>
+              <li>The total revenue increases as the output goes up. Moreover, the equation 'TR = p × q' is that of a Introductory Microeconomics straight line. This means that the TR curve is an upward rising straight line.</li>
+              <li>Consider the slope of this straight line. When the output is one unit the total revenue is p × 1 = p. Therefore, the slope of the straight line is Aq1/Oq1 = p.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.2 P=MC (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Explain the profit maximization of a firm under the following conditions. a) P = MC &nbsp; b) MC must be non-decreasing at q<sub>0</sub></p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.2</span><span class="tag tn">Teacher's Notes · II.5</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>(a)P=MC</b></p>
+        <p>Profits are the difference between total revenue and total cost. Both total revenue and total cost increase as output increases. Notice that as long as the change in total revenue is greater than the change in total cost, profits will continue to increase. Recall that change in total revenue per unit increase in output is the marginal revenue; and the change in total cost per unit increase in output is the marginal cost. Therefore, we can conclude that as long as marginal revenue is greater than marginal cost, profits are increasing. By the same logic, as long as marginal revenue is less than marginal cost, profits will fall. It follows that for profits to be maximum, marginal revenue should equal marginal cost.</p>
+        <p>In other words, profits are maximum at the level of output (which we have called q0) for which MR = MC For the perfectly competitive firm, we have established that the MR = P. So the firm's profit maximizing output becomes the level of output at which P=MC.</p>
+
+        <p><b>(b)MC must be none decreasing= at Q<sub>0</sub></b></p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 400 295" role="img" aria-label="U-shaped MC curve with price line and output levels q1 to q5">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="380" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, Marginal cost</text>
+              <text x="160" y="285" font-size="14" text-anchor="middle" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M80,100 Q200,300 340,30" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="140" x2="360" y2="140" stroke="#222" stroke-width="2"/>
+              <g stroke="#666" stroke-width="1.2">
+                <line x1="108" y1="140" x2="108" y2="250"/>
+                <line x1="230" y1="140" x2="230" y2="250"/>
+                <line x1="267" y1="140" x2="267" y2="250"/>
+                <line x1="290" y1="112.3" x2="290" y2="250"/>
+                <line x1="312" y1="79.5" x2="312" y2="250"/>
+              </g>
+              <g font-size="12" font-weight="bold">
+                <text x="226" y="134" text-anchor="end">B</text>
+                <text x="225" y="186" text-anchor="end">W</text>
+                <text x="262" y="134" text-anchor="end">C</text>
+                <text x="293" y="155">F</text>
+                <text x="285" y="108" text-anchor="end">Y</text>
+                <text x="315" y="155">E</text>
+                <text x="316" y="80">Z</text>
+              </g>
+              <text x="44" y="144" font-size="13" text-anchor="end">p</text>
+              <g font-size="11" text-anchor="middle">
+                <text x="108" y="266">q<tspan font-size="8" dy="3">1</tspan></text>
+                <text x="230" y="266">q<tspan font-size="8" dy="3">2</tspan></text>
+                <text x="267" y="266">q<tspan font-size="8" dy="3">3</tspan></text>
+                <text x="290" y="266">q<tspan font-size="8" dy="3">4</tspan></text>
+                <text x="312" y="266">q<tspan font-size="8" dy="3">5</tspan></text>
+              </g>
+              <text x="344" y="32" font-size="13" fill="#1f3c88" font-weight="bold">MC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p><b>Conditions 1 and 2 for profit maximization</b>.</p>
+            <p>Conditions 1 and 2 for profit maximization. The figure is used to demonstrate that when the market price is p, the output level of a profit maximizing firm cannot be q1 (marginal cost curve, MC, is downward sloping), q2 and q3 (market price exceeds marginal cost), or q4 and q5 (marginal cost exceeds market price).</p>
+            <p>Here the output level q1, the market price is equal to the marginal cost; however, the marginal cost curve is downward sloping. We claim that q1 cannot be a profit maximizing output level.</p>
+            <p style="margin-bottom:0;">Observe that for all output levels slightly to the left of q1, for q2 the market price is lower than the marginal cost, for q4 and q5 MC is more than market price. The argument implies that the firm's profit at an output level slightly smaller than q1 exceeds that corresponding to the output level q1 . This being the case, q1 cannot be a profit-maximizing output level.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.3 Short run supply (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">3.</span>Analyse the short run supply curve of a firm with the help of a diagram.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.3</span><span class="tag tn">Teacher's Notes · II.2</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Under perfect competition, short run supply curve of a firm can be explained with the help of the following diagram.</p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Short run output at prices p1 and p2">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M90,90 Q220,290 360,110" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="100" x2="370" y2="100" stroke="#222" stroke-width="2"/>
+              <line x1="50" y1="228" x2="370" y2="228" stroke="#222" stroke-width="2"/>
+              <line x1="280.6" y1="100" x2="280.6" y2="250" stroke="#666" stroke-width="1.2"/>
+              <g font-size="13">
+                <text x="44" y="104" text-anchor="end">p<tspan font-size="10" dy="3">1</tspan></text>
+                <text x="44" y="232" text-anchor="end">p<tspan font-size="10" dy="3">2</tspan></text>
+                <text x="280.6" y="266" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              </g>
+              <text x="304" y="38" font-size="13" fill="#1f3c88" font-weight="bold">SMC</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">SAC</text>
+              <text x="364" y="124" font-size="13" fill="#1f3c88" font-weight="bold">AVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>In the above diagram price is measured on the 'OY' axis and quantity is measured on the 'OX' axis.</p>
+            <p><b>Case - 1</b><br>Suppose the market price is P<sub>1</sub> as shown in diagram, which exceeds the minimum of AVC,<br>We start the output by equating P<sub>1</sub> with SMC on the rising part of the SMC curve; it leads the output level Q1.<br>At the same stage AVC at Q1 does not exceed the market price [P<sub>1</sub>], hence a firm can achieve profit maximization.</p>
+            <p style="margin-bottom:0;"><b>Case – 2</b><br>Suppose the market price is P2 as shown in the diagram, which less than or equal to AVC,<br>A firm cannot be supplies positive output or firm produce Zero output, and a firm cannot be achieving profit maximization.</p>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="box">
+            <svg viewBox="0 0 410 295" role="img" aria-label="Short run supply curve shown in bold">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M90,90 Q220,290 360,110" fill="none" stroke="#1f6fd1" stroke-width="2" opacity="0.7"/>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2" opacity="0.7"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3" fill="none" stroke="#1f6fd1" stroke-width="2" opacity="0.6"/>
+              <line x1="50" y1="195.3" x2="229.6" y2="195.3" stroke="#555" stroke-dasharray="3 3"/>
+              <line x1="50" y1="250" x2="50" y2="195.3" stroke="#1f3c88" stroke-width="5"/>
+              <path d="M229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f3c88" stroke-width="5"/>
+              <text x="306" y="34" font-size="12" fill="#1f3c88" font-weight="bold">Supply curve</text>
+              <text x="306" y="48" font-size="12" fill="#1f3c88" font-weight="bold">(SMC)</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">SAC</text>
+              <text x="364" y="114" font-size="13" fill="#1f3c88" font-weight="bold">AVC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <p style="margin:0;"><b>Combining cases1 and 2,</b> we reach an important conclusion. A firm's short run supply curve is the rising part of the SMC curve from and above the minimum AVC together with zero output for all prices strictly less than the minimum AVC. In figure Bold line represents the short run supply curve of the firm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.4 Long run supply (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">4.</span>Illustrate the Long run supply curve of a firm with the help of a diagram.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.4</span><span class="tag tn">Teacher's Notes · II.4</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>Long run supply curve can be explained with the help of the following diagram.</p>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Long run output at prices p1 and p2">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f6fd1" stroke-width="2.6"/>
+              <line x1="50" y1="100" x2="370" y2="100" stroke="#222" stroke-width="2"/>
+              <line x1="50" y1="228" x2="370" y2="228" stroke="#222" stroke-width="2"/>
+              <line x1="280.6" y1="100" x2="280.6" y2="250" stroke="#666" stroke-width="1.2"/>
+              <g font-size="13">
+                <text x="44" y="104" text-anchor="end">p<tspan font-size="10" dy="3">1</tspan></text>
+                <text x="44" y="232" text-anchor="end">p<tspan font-size="10" dy="3">2</tspan></text>
+                <text x="280.6" y="266" text-anchor="middle">q<tspan font-size="10" dy="3">1</tspan></text>
+              </g>
+              <text x="304" y="38" font-size="13" fill="#1f3c88" font-weight="bold">LRMC</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">LRAC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p>In this diagram, price is measured on the OY axis and product quantity is measured on the OX axis.</p>
+            <p><b>Case - 1</b><br>Suppose the market price is P<sub>1</sub> as shown in the diagram, which exceed the Minimum of RAC,</p>
+            <p>Up on equating the P1 with the LRMC on the rising part of LRMC curve, we obtain output level is Q1.</p>
+            <p style="margin-bottom:0;">Note also that the LRAC at q1 does not exceed the market price [P&gt;LRAC],a firm can achieve a profit maximizing in long run.</p>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="box">
+            <h4>DIAGRAM</h4>
+            <svg viewBox="0 0 410 295" role="img" aria-label="Long run supply curve shown in bold">
+              <line x1="50" y1="15" x2="50" y2="250" stroke="#333" stroke-width="2"/>
+              <line x1="50" y1="250" x2="390" y2="250" stroke="#333" stroke-width="2"/>
+              <text x="54" y="14" font-size="14" fill="#1f3c88" font-weight="bold">Price, costs</text>
+              <text x="390" y="285" font-size="14" text-anchor="end" fill="#1f3c88" font-weight="bold">Output</text>
+              <text x="40" y="264" font-size="13" text-anchor="end">O</text>
+              <path d="M110,50 Q250,260 370,80" fill="none" stroke="#1f6fd1" stroke-width="2" opacity="0.7"/>
+              <path d="M95,130 C120,235 185,240 229.6,195.3 C240,185 248,175 255,163.1" fill="none" stroke="#1f6fd1" stroke-width="2" opacity="0.6"/>
+              <line x1="50" y1="163.1" x2="255" y2="163.1" stroke="#555" stroke-dasharray="3 3"/>
+              <line x1="50" y1="250" x2="50" y2="163.1" stroke="#1f3c88" stroke-width="5"/>
+              <path d="M255,163.1 C265,147 285,90 300,40" fill="none" stroke="#1f3c88" stroke-width="5"/>
+              <text x="306" y="34" font-size="12" fill="#1f3c88" font-weight="bold">Supply Curve</text>
+              <text x="306" y="48" font-size="12" fill="#1f3c88" font-weight="bold">(LRMC)</text>
+              <text x="374" y="80" font-size="13" fill="#1f3c88" font-weight="bold">LRAC</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>EXPLANATION</h4>
+            <p><b>Case - 2</b><br>Suppose the market price is p2 as shown in the diagram, which less than minimum of LRAC,<br>A firm cannot be produce positive output or the firm produces zero output.<br>Thus, it cannot be achieve profit maximizing.</p>
+            <p style="margin-bottom:0;"><b>Combining cases 1 and 2,</b> we reach an important conclusion. A firm's long run supply curve is the rising part of the LRMC curve from and above the minimum LRAC together with zero output for all Prices less than the minimum LRAC. In Figure the bold line represents the long run supply curve of the firm.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- VII.5 Market supply (TN verbatim) -->
+    <div class="q">
+      <p class="qtext"><span class="qnum">5.</span>Explain Market supply curve with the help of diagram.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VII.5</span><span class="tag tn">Teacher's Notes · II.1</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p>The market supply curve shows the output levels of (plotted on the x-axis) those firms in the market produce in aggregate corresponding to different values of the market price (plotted on y-axis).</p>
+        <p>By adding up the individual supply curves we can derive the market supply curve.</p>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c" colspan="2">Firm A</th><th class="c" colspan="2">Firm B</th><th class="c" colspan="2">Market Supply schedule</th></tr>
+            <tr><th class="c">Price in Rs.</th><th class="c">Quantity of Product 'X' in Units</th><th class="c">Price in Rs.</th><th class="c">Quantity of Product 'X' in Units</th><th class="c">Price in Rs.</th><th class="c">Quantity of Product 'X' in Units</th></tr>
+            <tr><td class="c">5</td><td class="c">0</td><td class="c">5</td><td class="c">0</td><td class="c">5</td><td class="c">0</td></tr>
+            <tr><td class="c">10</td><td class="c">10</td><td class="c">10</td><td class="c">0</td><td class="c">10</td><td class="c">10</td></tr>
+            <tr><td class="c">15</td><td class="c">20</td><td class="c">15</td><td class="c">10</td><td class="c">15</td><td class="c">30</td></tr>
+            <tr><td class="c">20</td><td class="c">30</td><td class="c">20</td><td class="c">20</td><td class="c">20</td><td class="c">50</td></tr>
+            <tr><td class="c">25</td><td class="c">40</td><td class="c">25</td><td class="c">30</td><td class="c">25</td><td class="c">70</td></tr>
+          </table>
+        </div>
+
+        <div class="three-col">
+          <div class="box">
+            <h4>Firm A</h4>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Supply curve of Firm A">
+              <line x1="35" y1="15" x2="35" y2="170" stroke="#333" stroke-width="1.5"/>
+              <line x1="35" y1="170" x2="190" y2="170" stroke="#333" stroke-width="1.5"/>
+              <text x="35" y="11" font-size="9" text-anchor="middle">Y</text>
+              <text x="194" y="173" font-size="9">X</text>
+              <text x="10" y="95" font-size="8" text-anchor="middle" fill="#1f3c88" transform="rotate(-90 10 95)">Price of Good X</text>
+              <text x="110" y="196" font-size="8" text-anchor="middle" fill="#1f3c88">Quantitative supply</text>
+              <g font-size="8" text-anchor="end"><text x="31" y="145">5</text><text x="31" y="117">10</text><text x="31" y="89">15</text><text x="31" y="61">20</text><text x="31" y="33">25</text></g>
+              <g font-size="8" text-anchor="middle"><text x="35" y="181">0</text><text x="70" y="181">10</text><text x="105" y="181">20</text><text x="140" y="181">30</text><text x="175" y="181">40</text></g>
+              <g stroke="#555" stroke-width="1"><line x1="70" y1="114" x2="70" y2="170"/><line x1="105" y1="86" x2="105" y2="170"/><line x1="140" y1="58" x2="140" y2="170"/><line x1="175" y1="30" x2="175" y2="170"/></g>
+              <polyline points="35,142 70,114 105,86 140,58 175,30" fill="none" stroke="#1f6fd1" stroke-width="2"/>
+              <text x="150" y="30" font-size="9" font-weight="bold" fill="#1f3c88">SA</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>Firm B</h4>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Supply curve of Firm B">
+              <line x1="35" y1="15" x2="35" y2="170" stroke="#333" stroke-width="1.5"/>
+              <line x1="35" y1="170" x2="190" y2="170" stroke="#333" stroke-width="1.5"/>
+              <text x="35" y="11" font-size="9" text-anchor="middle">Y</text>
+              <text x="194" y="173" font-size="9">X</text>
+              <text x="10" y="95" font-size="8" text-anchor="middle" fill="#1f3c88" transform="rotate(-90 10 95)">Price of Good X</text>
+              <text x="110" y="196" font-size="8" text-anchor="middle" fill="#1f3c88">Quantitative supply</text>
+              <g font-size="8" text-anchor="end"><text x="31" y="145">5</text><text x="31" y="117">10</text><text x="31" y="89">15</text><text x="31" y="61">20</text><text x="31" y="33">25</text></g>
+              <g font-size="8" text-anchor="middle"><text x="35" y="181">0</text><text x="70" y="181">10</text><text x="105" y="181">20</text><text x="140" y="181">30</text><text x="175" y="181">40</text></g>
+              <g stroke="#555" stroke-width="1"><line x1="70" y1="86" x2="70" y2="170"/><line x1="105" y1="58" x2="105" y2="170"/><line x1="140" y1="30" x2="140" y2="170"/></g>
+              <polyline points="35,142 35,114 70,86 105,58 140,30" fill="none" stroke="#1f6fd1" stroke-width="2"/>
+              <text x="118" y="26" font-size="9" font-weight="bold" fill="#1f3c88">SB</text>
+            </svg>
+          </div>
+          <div class="box">
+            <h4>Market Supply</h4>
+            <svg viewBox="0 0 200 200" role="img" aria-label="Market supply curve">
+              <line x1="35" y1="15" x2="35" y2="170" stroke="#333" stroke-width="1.5"/>
+              <line x1="35" y1="170" x2="190" y2="170" stroke="#333" stroke-width="1.5"/>
+              <text x="35" y="11" font-size="9" text-anchor="middle">Y</text>
+              <text x="194" y="173" font-size="9">X</text>
+              <text x="10" y="95" font-size="8" text-anchor="middle" fill="#1f3c88" transform="rotate(-90 10 95)">Price of Good X</text>
+              <text x="110" y="196" font-size="8" text-anchor="middle" fill="#1f3c88">Quantitative supply</text>
+              <g font-size="8" text-anchor="end"><text x="31" y="145">5</text><text x="31" y="117">10</text><text x="31" y="89">15</text><text x="31" y="61">20</text><text x="31" y="33">25</text></g>
+              <g font-size="7" text-anchor="middle"><text x="35" y="181">0</text><text x="55" y="181">10</text><text x="75" y="181">20</text><text x="95" y="181">30</text><text x="115" y="181">40</text><text x="135" y="181">50</text><text x="155" y="181">60</text><text x="175" y="181">70</text></g>
+              <g stroke="#555" stroke-width="1"><line x1="55" y1="114" x2="55" y2="170"/><line x1="95" y1="86" x2="95" y2="170"/><line x1="135" y1="58" x2="135" y2="170"/><line x1="175" y1="30" x2="175" y2="170"/></g>
+              <polyline points="35,142 55,114 95,86 135,58 175,30" fill="none" stroke="#1f6fd1" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="box">
+          <h4>Explanation</h4>
+          <p>In this Schedule and in diagram we can observe that when price is Rs. 5 of Firm A the supply is 0. At the same time Firm B's Supply is also 0.</p>
+          <p>When price is going to be increased, we can observe that in both the firm's supply is also going to be increased.</p>
+          <p style="margin-bottom:0;">Even market supply schedule and diagram also show that.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SECTION G: 5 MARKS ================= -->
+  <section id="five">
+    <h2>G. Assignment and Project Oriented Question (5 marks)</h2>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">1.</span>In a Perfectly competitive market when market price of each unit of good is Rs.60, compute the Total Revenue, Marginal Revenue and Average Revenue schedules from the following table.</p>
+      <div class="tags"><span class="tag qb">Question Bank · VIII.1</span><span class="tag tn">Teacher's Notes · III.1</span></div>
+      <div class="table-wrap">
+        <table>
+          <tr><th class="c">Quantity sold</th><th class="c">TR</th><th class="c">MR</th><th class="c">AR</th></tr>
+          <tr><td class="c">0</td><td></td><td></td><td></td></tr>
+          <tr><td class="c">1</td><td></td><td></td><td></td></tr>
+          <tr><td class="c">2</td><td></td><td></td><td></td></tr>
+          <tr><td class="c">3</td><td></td><td></td><td></td></tr>
+          <tr><td class="c">4</td><td></td><td></td><td></td></tr>
+          <tr><td class="c">5</td><td></td><td></td><td></td></tr>
+        </table>
+      </div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <div class="table-wrap">
+          <table>
+            <tr><th class="c" colspan="4">Solution</th></tr>
+            <tr><th class="c">Quantity sold</th><th class="c">TR</th><th class="c">MR</th><th class="c">AR</th></tr>
+            <tr><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+            <tr><td class="c">1</td><td class="c">60</td><td class="c">60</td><td class="c">60</td></tr>
+            <tr><td class="c">2</td><td class="c">120</td><td class="c">60</td><td class="c">60</td></tr>
+            <tr><td class="c">3</td><td class="c">180</td><td class="c">60</td><td class="c">60</td></tr>
+            <tr><td class="c">4</td><td class="c">240</td><td class="c">60</td><td class="c">60</td></tr>
+            <tr><td class="c">5</td><td class="c">300</td><td class="c">60</td><td class="c">60</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="q">
+      <p class="qtext"><span class="qnum">2.</span>Give the meaning of TR, MR and AR. (For Blind students only)</p>
+      <div class="tags"><span class="tag qb">Question Bank · VIII (Blind students)</span></div>
+      <div class="ans"><span class="lbl">Answer</span>
+        <p><b>Total Revenue (TR):</b> Total revenue of a firm is defined as the market price of the good (p) multiplied by the firm's output (q). TR = p × q</p>
+        <p><b>Marginal Revenue (MR):</b> The marginal revenue of a firm is defined as the increase in total revenue for a unit increase in the firm's output. MR = Change in total revenue / Change in quantity</p>
+        <p><b>Average Revenue (AR):</b> The average revenue of a firm is defined as total revenue per unit of output. AR = TR / q = p</p>
+        <p>For a price-taking firm, MR = AR = p (market price).</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Micro Chapter 4 · The Theory of the Firm under Perfect Competition</footer>
+</div>
+
+</body>
+</html>
